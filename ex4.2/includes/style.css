@@ -1,0 +1,50 @@
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.wrapper{
+  margin: 0 auto;
+  width: 90%;
+  background-color:grey;
+}
+
+svg{
+display:block;
+float:left;
+}
+
+form{
+display:block;
+float:left;
+margin-top:190px;
+}
+
+.form-control{
+  background-color: bisque !important;
+}
+
+
+#sendButton{
+  margin-left: 50px;
+}
+
+#centerText{
+  margin-left: 100px;
+}
+
+#userName{
+margin-right: 20px;
+}
+
+body{
+  background-color: grey !important;
+}
+
+
+.dragon{
+  display: block;
+  margin-left:100px;
+}

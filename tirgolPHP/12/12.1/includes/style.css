@@ -1,0 +1,124 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+
+}
+
+section{
+    display: block;
+    transition: color 2s linear;
+    transition: 1s ease-in-out;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aquamarine;
+
+    -webkit-animation-name: bounce;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 4;
+    -webkit-animation-direction: alternate;
+    position: relative;
+
+
+}
+
+section:hover{
+    transform: rotate(30deg);
+    color: blue;
+}
+
+@-webkit-keyframes bounce{
+    from{
+        left: 0px;
+    }
+    to{
+        left: 400px;
+    }
+}
+
+@media (min-width: 851px){
+    .leftCol{
+        float: left;
+        width: 40%;
+        margin-right: 5%;
+        background: yellow;
+        font-size: 1.4vw;
+    }
+    
+    .midCol{
+        float: left;
+        width: 25%;
+        margin-right: 5%;
+        background: #666666;
+        font-size: 1.1vw;
+    }
+    
+    .rightCol{
+        float: right;
+        width: 25%;
+       background: red;
+        font-size: 1.2vw;
+    }
+}
+
+@media (max-width: 850px){
+    .leftCol{
+        float: left;
+        width: 55%;
+        margin-right: 5%;
+        background: yellow;
+    }
+    
+    .midCol{
+        float: right;
+        width: 35%;
+        margin-right: 0px;
+        background: #666666;
+    }
+    
+    .rightCol{
+        float: none;
+        width: 100%;
+       background: red;
+       clear: both;
+    }
+}
+
+@media (min-width:591px) and (max-width: 850px){
+    .leftCol{
+        float: left;
+        width: 55%;
+        margin-right: 5%;
+        background: yellow;
+    }
+    
+    .midCol{
+        float: right;
+        width: 35%;
+        margin-right: 0px;
+        background: #666666;
+    }
+    
+    .rightCol{
+        float: none;
+        width: 100%;
+       background: red;
+       clear: both;
+    }
+
+}
+
+@media (max-width: 590px) {
+    .leftCol, .midCol, .rightCol{
+        float: none;
+        width:100%;
+        margin: 0px;
+        border-bottom: 1px solid black;
+        background:yellow;
+    }
+    
+}
