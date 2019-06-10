@@ -32,7 +32,6 @@
 
 <section class="dragon1"> 
 
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">  <image id="image0" width="256" height="256" x="0" y="0"
     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
@@ -781,7 +780,7 @@ MjFUMTg6MzQ6NDkrMDM6MDC18zn4AAAAAElFTkSuQmCC" />
         <?php
         $un = $_GET["reg_un"];
         $ps = $_GET["reg_pass"];
-
+        
         if($un == "Dani" && $ps == "drogon")
         echo"<h2>Aena shekhikhi " .$un . "</h2>";
         else
@@ -792,7 +791,8 @@ MjFUMTg6MzQ6NDkrMDM6MDC18zn4AAAAAElFTkSuQmCC" />
     
 <section class="dragon2"> 
 
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">  <image id="image0" width="256" height="256" x="0" y="0"
     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAABGdBTUEAALGPC/xhBQAAACBjSFJN

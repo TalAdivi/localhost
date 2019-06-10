@@ -25,21 +25,19 @@ if(isset($_POST["usermail"]) && isset($_POST["pass"])){
     // echo $query;
     $result = mysqli_query($connection,$query);
     
-
-    if($res = mysqli_fetch_assoc($result)){       
+    print_r($result);
+        
+    if(!$result->num_rows){
+        $errorMsg = "Invalid username or password";
+    }else{
         mysqli_free_result($result);
         mysqli_close($connection);
         header("Location: index0.php");
     }
-    else{
-        $errorMsg = "Invalid username or password";
-    }
-        
-    // if(!$res = mysqli_fetch_assoc($result)){
-    //     $errorMsg = "Invalid username or password";
-    // }
 
 }
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
