@@ -1,9 +1,7 @@
 <?php
 
 //session_start();
-
-$errorMsg = "";
-
+printf(isset($_POST["usermail"]) && isset($_POST["pass"]));$errorMsg = "";
 if(isset($_POST["usermail"]) && isset($_POST["pass"])){
     $usermail = $_POST["usermail"];
     $password = $_POST["pass"];
@@ -11,7 +9,7 @@ if(isset($_POST["usermail"]) && isset($_POST["pass"])){
     $dbuser = "studDB19a";
     $dbpass = "stud19DB1!";
     $dbname = "studDB19a";
-    
+
     $connection = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
     
     if(mysqli_connect_errno())
