@@ -31,6 +31,7 @@ $(document).ready(function () {
    $('#country').on('change', function (e) {
       var value = e.target.value
       var match = ''
+      console.log(e);
       console.log(value)
       /*if (value.toLowerCase() != 'all') {*/
          for (var row of json_data) {

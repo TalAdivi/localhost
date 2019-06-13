@@ -19,18 +19,22 @@ if(isset($_POST["usermail"]) && isset($_POST["pass"])){
     }
     
     
-    $query = "SELECT mail,password FROM studDB19a.tbl_users_202 WHERE mail='" . $usermail ."' AND password = '". $password ."'";
+    $query = "SELECT phone,address FROM studDB19a.tbl_users_202 WHERE mail='" . $usermail ."' AND password = '". $password ."'";
     // echo $query;
     $result = mysqli_query($connection,$query);
     
     print_r($result);
+
+    $rows = mysqli_fetch_assoc($result);
+
+    print_r($rows);
         
     if(!$result->num_rows){
         $errorMsg = "Invalid username or password";
     }else{
-        mysqli_free_result($result);
-        mysqli_close($connection);
-        header("Location: index0.php");
+        // mysqli_free_result($result);
+        // mysqli_close($connection);
+        // header("Location: index0.php");
     }
 
 }

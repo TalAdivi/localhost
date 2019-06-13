@@ -1,0 +1,54 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+
+}
+
+main, nav, article, aside, section, header, footer {
+    display: block;
+}
+
+#mainWrapper{
+    width: 1400px;
+    margin: 0px auto;
+}
+
+#logo{ 
+    display: block;
+    background-image: url(../images/newLogo.png);
+    width: 164px;
+    height: 130px;
+    background-repeat: no-repeat;
+}
+
+
+
+/* Media Querys */
+
+@media only screen and (max-width:480px){
+    #mainWrapper{
+        width: 100%;
+        margin: 0px auto;
+    }
+    
+    .hey-user-name{
+        width: fit-content;
+        top: 10px;
+    }
+
+   
+ 
+}
+
+/* on tablet its still looks good */
+@media only screen and (min-width:481px) and (max-width:768px){
+
+}
+
+@media only screen and (min-width:769px)
+{
+
+}
+
+/* /Media Querys */
