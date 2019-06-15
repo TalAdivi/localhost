@@ -3,7 +3,7 @@
 
 
 <head>
-  <title>Workout page</title>
+  <title>passclock page</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="includes/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -12,18 +12,37 @@
   <link href="https://fonts.googleapis.com/css?family=Montaga&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="includes/main.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
 
 
 
 <body>
-    
+        <div class="container">
+                
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+              
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Snoopy_Peanuts.png/200px-Snoopy_Peanuts.png">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+              </div>
+    <img class="back-img" src="../first-flow/images/Image_11.png">
     <div class="dropdown">
         <button class="type-of-exercise btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           A
@@ -32,8 +51,6 @@
           <a class="dropdown-item" href="#">B</a>
           <a class="dropdown-item" href="#">c</a>
         </div>
-        <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
         <div class="clear"></div>
         <div> <img class ="left" src="../first-flow/images/Interval.png"> </div>
         <div class="alert alert-success width" role="alert">
@@ -83,22 +100,17 @@
             <br>
             Rest: 30 sec 
         </div>
-        <div class="black-dot"></div>
+        <div class="black-dot" data-toggle="modal" data-target="#myModal"></div>
         <div class="clear"></div>
     </div>
     <footer id="special-footer"> 
-     <div> <img class ="footer-img" src="../first-flow/images/man_raise_hand.png"> </div>
-     <div> <img class ="footer-img" src="../first-flow/images/Food_Apple_Icon_1Large.png"> </div>  
-     <div> <img class ="footer-img" src="../first-flow/images/Image_4Large.png"> </div>
-     <div> <img class ="footer-img" src="../first-flow/images/Image_6Large.png"> </div>
+    <div class="row">
+     <div class="col"> <img class ="footer-img" src="../first-flow/images/man_raise_hand.png"> </div>
+     <div class="col"> <img class ="footer-img" src="../first-flow/images/Food_Apple_Icon_1Large.png"> </div>  
+     <div class="col"> <img class ="footer-img" src="../first-flow/images/Image_4Large.png"> </div>
+     <div class="col"> <img class ="footer-img" src="../first-flow/images/Image_6Large.png"> </div>
+    </div>
     </footer>
-
-
-
-
-
-
-
 
 
 
