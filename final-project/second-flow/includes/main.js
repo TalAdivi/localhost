@@ -1,3 +1,6 @@
+
+
+
 $( function() {
     clicked = false;
     $( "button" ).on( "click", function( event ) {
@@ -72,8 +75,4 @@ $(document).ready(function(){
     })
   });
   
-
-
-
-
-
+  
