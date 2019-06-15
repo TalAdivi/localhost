@@ -113,7 +113,7 @@ main, nav, article, aside, section, header, footer {
       
       .userRank{
           position: relative;
-          top: 60px;
+          top: 20px;
           right: 100px;
         }
 
@@ -134,11 +134,39 @@ main, nav, article, aside, section, header, footer {
         }
 
 
-   .home-icons{
-       position: relative;
-       float: right;
-       
-   }
+        .home-icons{
+          position: relative;
+          float: right;
+          margin: 0% 0% 10% 0%;
+        }
+
+        .started-be4{
+          width: fit-content;
+        }
+
+        .show-percent{
+          padding-top: 10px;
+          font-weight: bold;
+        }
+
+        .meal-at{
+          position: absolute;
+          display: block;
+          bottom: 1px;
+          margin-bottom: 10px;
+        }
+
+        .next-workout section{
+          margin-top: 15px;
+        }
+
+        .col{
+          padding-right: unset !important;
+        }
+
+        .v-x-sign{
+          padding-left: 10px !important;
+        }
    
    
 

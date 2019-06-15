@@ -75,6 +75,8 @@ $(document).ready(function(){
         $target.find('.left').css('background-color', opts.backgroundColor);
         $target.find('.rotate').css('background-color', opts.progressColor);
         $target.find('.right').css('background-color', opts.progressColor);
+
+        $('.show-percent').append(opts.percent + '%');
     
         var $rotate = $target.find('.rotate');
         setTimeout(function () {	
