@@ -1,55 +1,16 @@
 $(document).ready(function(){
-  // console.log("GEYYEYEY");
-
-  var table_row = $(
-    '<tr>' +
-    '<th scope="row">' + 
-    '<div class="redDot"></div>' +
-    '</th>' +
-    '<td colspan="2"><a class="nameLink" href="./specificWish.html">'+
-    // name +
-    '</a></td>' +
-    '<td>' +
-    // subject +
-    '</td>' +
-    '</tr>'
-
-  )
-  $('.whishes-table-body')
-
+  
+  //to change only the logo size because the other style are the same as mobile
+  $(window).on('resize',function(size){
+    var windowWidth = $(window).width();
+    if(windowWidth <= 768 && windowWidth >= 481){
+      $('#logo').attr({style: 'background-image: url(./images/largeLogo.png); width:600px; height:500px;'});
+      $('.move-up').attr({style:'margin-bottom: -180px;'})
+    }
+  })
 });
 
-
-
-
-
-
-
-
-    $('.addIcon').on("click",function(){
-        var table_row = $(
-            '<tr>' +
-            '<td>' +
-            '<input type="text" class="form-control" placeholder="Product name">' +
-            '</td>' +
-            '<td>' +
-            '<input type="number" class="form-control" placeholder="0">' +
-            '</td>' +
-            '</tr>'
-        )
-        $('.mainTableBody').append(table_row);
-    })
-
-    // to remove selected meal
-    $("button").on("click",function(curr){
-            $("button").removeClass("active");
-            $(this).toggleClass("active");
-    })
-
-
-
-
-    // console.log("GEYYEYEY");
+    // round progress bar logic
     $.fn.loading = function () {
       var DEFAULTS = {
         backgroundColor: '#b3cef6',
@@ -102,36 +63,9 @@ $(document).ready(function(){
     }
  
   
-  
-  
-  
   $(".progress-bar").loading();
       $('input').on('click', function () {
          $(".progress-bar").loading();
       });
   
-  var images = [
-      '../images/Food_Apple_Icon_Med.png',
-      'https://www.nycgo.com/images/uploads/homepage/Empire-State-Building-Observatory-Tom-Perry-2618.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg'
-  ];
-  
-  var i=0
-  $('.progress-bar div span').each(function() {
-    $(this).css('background-image', 'url('+images[i]+')');
-    $(this).css('background-size','cover');
-    i = (i + 1) % images.length;
-  });
-
-  
-  
-
-
-
-
-  
-
-
-
-
 
