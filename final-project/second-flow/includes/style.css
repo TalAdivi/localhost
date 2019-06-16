@@ -27,6 +27,80 @@ main, nav, article, aside, section, header, footer {
 /* Media Querys */
 @media only screen and (max-width:480px) { /*  small smartphone   */
      
+  
+    #mainWrapper{
+        width: 100%;
+        margin: 0px auto;
+    }
+    .hey-user-name{
+        width: fit-content;
+        top: 10px;
+    }
+        /* workout page */
+    .back-img{
+         float: left;
+         width: 40px;
+          height: 40px;
+          margin-top: 20px;
+         margin-left: 10px;
+    }
+    .btn-secondary {
+        color: black !important; 
+        background-color: white !important; 
+        border-color: #6c757d;
+    }
+    .type-of-exercise{
+        margin-top: 20px;
+        float: left;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        margin-left: 68px;
+    }
+    .width{
+        margin-top: 40px;
+        float: left;
+        width: 50%;
+        height: 10em;
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }
+    .left{
+        margin-top: 60px; 
+        float: left;
+        width: 100px;
+          
+    }
+    .black-dot{
+        position: relative;
+        float: left;
+        border-radius: 100%;
+        margin-top: 100px;
+        margin-left: 10px;
+    }
+    .clear{
+        clear: both;
+    }
+    #special-footer{
+        background-color: gainsboro;
+        width: 100%;
+        height: 90px;
+    }
+
+    .footer-img{ 
+        position: relative;
+        float: left;
+        width: 3.4em;
+        height: 3.4em;
+        margin-top: 18px !important;
+        margin-left: 25px;
+        margin: 8% 4% 0% 4%;
+    } 
+ }
+
+@media only screen and (min-width:768px)  /* for tablet  */
+{
     .back-img{
         float: left;
         width: 40px;
@@ -93,20 +167,10 @@ main, nav, article, aside, section, header, footer {
         float: left;
         width: 3.4em;
         height: 3.4em;
-        margin-top: 20px;
+        margin-top: 18px !important;
         margin-left: 25px;
         margin: 8% 4% 0% 4%;
     } 
-    .col{
-        margin-top: 15px;
-    }
-    .location{
-        margin: 0 20%;
-    }
- }
-
-@media only screen and (min-width:769px)
-{
 
 }
 
