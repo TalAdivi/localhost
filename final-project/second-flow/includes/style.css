@@ -97,6 +97,12 @@ main, nav, article, aside, section, header, footer {
         margin-left: 25px;
         margin: 8% 4% 0% 4%;
     } 
+    .col{
+        margin-top: 15px;
+    }
+    .location{
+        margin: 0 20%;
+    }
  }
 
 @media only screen and (min-width:769px)
