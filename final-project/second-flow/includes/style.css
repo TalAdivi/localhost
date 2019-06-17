@@ -1,333 +1,157 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Alegreya Sans SC', sans-serif;
+/* mobile first */
 
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 main, nav, article, aside, section, header, footer {
-    display: block;
-}
-
-#mainWrapper{
-    width: 1400px;
-    margin: 0px auto;
-}
-
-#logo{ 
-    display: block;
-    background-image: url(../images/largeLogo1.png);
-    /* background-color: black; */
-    width: 320px;
-    height: 254px;
-    background-repeat: no-repeat;
+  display: block;
 }
 
 
-
-
-/* Media Querys */
-
-@media only screen and (max-width:480px){
-    #mainWrapper{
-        width: 100%;
-        margin: 0px auto;
-    }
-    
-    .hey-user-name{
-        width: fit-content;
-        top: 10px;
-    }
-
-    .profile-pic{
-      position: relative;
-      bottom: 110px;
-    }
-
-    /*  */
-
- 
-      .progress-bar {
-        display: inline-block !important;
-        position: absolute !important;
-        /* position: absolute; */
-        /* vertical-align: middle; */
-        /* height: 172px; */
-        /* width: 172px; */
-        background-color: unset !important;
-        text-align: center;
-        margin-left: -85px;
-        margin-top: -114px;
-      }
-      .progress-bar div {
-        position: absolute;
-        height: 172px;
-        width: 172px;
-        border-radius: 50%;
-      }
-      /* .progress-bar div span {
-        position: absolute;
-        font-family: Arial;
-        font-size: 0px;
-        line-height: 0px;
-        height: 0px;
-        width: 0px;
-        left: 0px;
-        top: 0px;
-        text-align: center;
-        border-radius: 50%;
-        background-color: white;
-      } */
-      .progress-bar .background {
-        background-color: #b3cef6;
-      }
-      .progress-bar .rotate {
-        clip: rect(0 82px 172px 0);
-        background-color: #4b86db;
-      }
-      .progress-bar .left {
-        clip: rect(0 82px 172px 0);
-        opacity: 1;
-        background-color: #b3cef6;
-      }
-      .progress-bar .right {
-        clip: rect(0 82px 172px 0);
-        transform: rotate(180deg);
-        opacity: 0;
-        background-color: #4b86db;
-      }
-      
-      @keyframes toggle {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-
-      
-      
-      /*  */
-      
-      
-      .userRank{
-          position: relative;
-          top: 20px;
-          right: 100px;
-        }
-
-
-        
-        .round-bar{
-            position: absolute;
-            /* top: 10px; */
-            /* right: 70px; */
-        }
-
-        .day-details{
-            margin-top: -90px; 
-        }
-
-        .alert-success{
-            overflow: hidden;
-        }
-
-
-        .home-icons{
-          position: relative;
-          float: right;
-          margin: 0% 0% 10% 0%;
-        }
-
-        .started-be4{
-          width: fit-content;
-        }
-
-        .show-percent{
-          padding-top: 10px;
-          font-weight: bold;
-        }
-
-        .meal-at{
-          position: absolute;
-          display: block;
-          bottom: 1px;
-          margin-bottom: 10px;
-        }
-
-        .next-workout section{
-          margin-top: 15px;
-        }
-
-        .col{
-          padding-right: unset !important;
-        }
-
-        .v-x-sign{
-          padding-left: 10px !important;
-        }
-   
-   
-
-   
-
-
-
-
-
-
-   
- 
+#logo {
+  display: block;
+  background-image: url(../images/largeLogo1.png);
+  /* background-color: black; */
+  width: 320px;
+  height: 254px;
+  background-repeat: no-repeat;
 }
 
-/* on tablet its still looks good */
-@media only screen and (min-width:481px) and (max-width:768px){
-  #mainWrapper{
-    width: 100%;
-    margin: 0px auto;
+#mainWrapper {
+  width: 100%;
+  margin: 0px auto;
 }
 
-.hey-user-name{
-    width: fit-content;
-    top: 10px;
+.hey-user-name {
+  width: fit-content;
+  top: 10px;
 }
 
-.profile-pic{
+.profile-pic {
   position: relative;
   bottom: 110px;
 }
 
 /*  */
 
+.progress-bar {
+  display: inline-block !important;
+  position: absolute !important;
+   background-color: unset !important;
+  text-align: center;
+  margin-left: -85px;
+  margin-top: -114px;
+}
 
-  .progress-bar {
-    display: inline-block !important;
-    position: absolute !important;
-    /* position: absolute; */
-    /* vertical-align: middle; */
-    /* height: 172px; */
-    /* width: 172px; */
-    background-color: unset !important;
-    text-align: center;
-    margin-left: -85px;
-    margin-top: -114px;
-  }
-  .progress-bar div {
-    position: absolute;
-    height: 172px;
-    width: 172px;
-    border-radius: 50%;
-  }
-  /* .progress-bar div span {
-    position: absolute;
-    font-family: Arial;
-    font-size: 0px;
-    line-height: 0px;
-    height: 0px;
-    width: 0px;
-    left: 0px;
-    top: 0px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: white;
-  } */
-  .progress-bar .background {
-    background-color: #b3cef6;
-  }
-  .progress-bar .rotate {
-    clip: rect(0 82px 172px 0);
-    background-color: #4b86db;
-  }
-  .progress-bar .left {
-    clip: rect(0 82px 172px 0);
-    opacity: 1;
-    background-color: #b3cef6;
-  }
-  .progress-bar .right {
-    clip: rect(0 82px 172px 0);
-    transform: rotate(180deg);
+.progress-bar div {
+  position: absolute;
+  height: 172px;
+  width: 172px;
+  border-radius: 50%;
+}
+
+
+.progress-bar .background {
+  background-color: #b3cef6;
+}
+
+.progress-bar .rotate {
+  clip: rect(0 82px 172px 0);
+  background-color: #4b86db;
+}
+
+.progress-bar .left {
+  clip: rect(0 82px 172px 0);
+  opacity: 1;
+  background-color: #b3cef6;
+}
+
+.progress-bar .right {
+  clip: rect(0 82px 172px 0);
+  transform: rotate(180deg);
+  opacity: 0;
+  background-color: #4b86db;
+}
+
+@keyframes toggle {
+  0% {
     opacity: 0;
-    background-color: #4b86db;
   }
-  
-  @keyframes toggle {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
+}
 
-  
-  
-  /*  */
-  
-  
-  .userRank{
-      position: relative;
-      top: 20px;
-      right: 100px;
-    }
+/*  */
 
+.userRank {
+  position: relative;
+  top: 20px;
+  right: 100px;
+}
 
-    
-    .round-bar{
-        position: absolute;
-        /* top: 10px; */
-        /* right: 70px; */
-    }
+.round-bar {
+  position: absolute;
+}
 
-    .day-details{
-        margin-top: -90px; 
-    }
+.day-details {
+  margin-top: -90px;
+}
 
-    .alert-success{
-        overflow: hidden;
-    }
+.alert-success {
+  overflow: hidden;
+}
 
+.home-icons {
+  position: relative;
+  float: right;
+  margin: 0% 0% 10% 0%;
+}
 
-    .home-icons{
-      position: relative;
-      float: right;
-      margin: 0% 0% 10% 0%;
-    }
+.started-be4 {
+  width: fit-content;
+}
 
-    .started-be4{
-      width: fit-content;
-    }
+.show-percent {
+  padding-top: 10px;
+  font-weight: bold;
+}
 
-    .show-percent{
-      padding-top: 10px;
-      font-weight: bold;
-    }
+.meal-at {
+  position: absolute;
+  display: block;
+  bottom: 1px;
+  margin-bottom: 10px;
+}
 
-    .meal-at{
-      position: absolute;
-      display: block;
-      bottom: 1px;
-      margin-bottom: 10px;
-    }
+.next-workout section {
+  margin-top: 15px;
+}
 
-    .next-workout section{
-      margin-top: 15px;
-    }
+.calendar-week .col {
+  padding-right: unset !important;
+}
 
-    .col{
-      padding-right: unset !important;
-    }
-
-    .v-x-sign{
-      padding-left: 10px !important;
-    }
-
+.v-x-sign {
+  padding-left: 10px !important;
 }
 
 
-@media only screen and (min-width:769px)
-{
 
+/* Media Querys - tablet */
+
+@media only screen and (min-width:481px)  {
+  #logo {
+    background-image: url(../images/largeLogo.png);
+    width: 600px;
+    height: 500px;
+  }
+
+  .move-up{
+    margin-bottom: -160px;
+  }
 }
-
 /* /Media Querys */
