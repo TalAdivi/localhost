@@ -65,11 +65,19 @@ main, nav, article, aside, section, header, footer {
         margin-left: 20px;
     }
     .left{
+        /* margin-top: 60px;  */
+        float: left;
+        width: 100px;
+    }
+
+
+   .left-img{
         margin-top: 60px; 
         float: left;
         width: 100px;
-          
-    }
+   }
+
+
     .black-dot{
         position: relative;
         float: left;
@@ -84,6 +92,11 @@ main, nav, article, aside, section, header, footer {
         background-color: gainsboro;
         width: 100%;
         height: 90px;
+    }
+
+    #special-footer .row{
+      margin-right: unset;
+      margin-left:  unset;
     }
 
 /*  */
@@ -184,6 +197,11 @@ main, nav, article, aside, section, header, footer {
 
 .calendar-week .col {
   padding-right: unset !important;
+}
+
+#special-footer .col{
+  padding-right: unset;
+  padding-left: unset;
 }
 
 .v-x-sign {
