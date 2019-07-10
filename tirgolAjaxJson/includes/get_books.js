@@ -8,4 +8,6 @@ $(document).ready(function(){
             $('#books-list ul').append("<li> <a href='book.html?bookid=" + this.id + "'>" + this.name + "</a></li>");
         });
     });
+
 });
+

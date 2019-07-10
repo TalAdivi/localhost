@@ -1,0 +1,19 @@
+header, footer, aside, section, main, article {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+    background: bisque;
+    padding: 10px;
+}
+
+.highlight{
+    background-color: yellowgreen;
+}
+main{
+    width: 100%;
+}
