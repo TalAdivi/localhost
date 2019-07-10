@@ -3,9 +3,9 @@
    "products":[
       {
          "name": "Chicken Breast",
-         "protein": 31,
-         "carbohydrat": 0,
-         "calories": 165
+         "protein": "31",
+         "carbohydrat": "0",
+         "calories": "165"
       },
       {
          "name": "",

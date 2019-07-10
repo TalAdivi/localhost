@@ -1,30 +1,30 @@
 
-clicked = false;
-$( "button" ).on( "click", function( event ) {
-  var target = $( event.target ),
-    progressbar = $( ".progress-bar" ),
-    progressbarValue = progressbar.find( ".progress-bar" );
+// clicked = false;
+// $( "button" ).on( "click", function( event ) {
+//   var target = $( event.target ),
+//     progressbar = $( ".progress-bar" ),
+//     progressbarValue = progressbar.find( ".progress-bar" );
     
 
-   if ( target.is( "#colorButton" ) ) {
-       console.log('here');
+//    if ( target.is( "#colorButton" ) ) {
+//        console.log('here');
     
-       progressbar.css({"background-color": '#' + Math.floor( Math.random() * 16777215 ).toString( 16 )});
+//        progressbar.css({"background-color": '#' + Math.floor( Math.random() * 16777215 ).toString( 16 )});
 
-  } else if ( target.is( "#falseButton" ) ) {
-      if(!clicked){
-          progressbar.addClass("progress-bar-striped");
-          progressbar.addClass("progress-bar-animated");
-        clicked = true;
-      }
-      else{
-          console.log("in else");
-        progressbar.removeClass("progress-bar-striped");
-        progressbar.removeClass("progress-bar-animated");
-        clicked = false;
-      }
-  }
-});
+//   } else if ( target.is( "#falseButton" ) ) {
+//       if(!clicked){
+//           progressbar.addClass("progress-bar-striped");
+//           progressbar.addClass("progress-bar-animated");
+//         clicked = true;
+//       }
+//       else{
+//           console.log("in else");
+//         progressbar.removeClass("progress-bar-striped");
+//         progressbar.removeClass("progress-bar-animated");
+//         clicked = false;
+//       }
+//   }
+// });
 
 $("button").on("click",function(curr){
   $("button").removeClass("active");
@@ -45,8 +45,6 @@ $('.addIcon').on("click",function(){
   )
   $('.mainTableBody').append(table_row);
 })
-
-
 
 
 
@@ -109,24 +107,39 @@ $('input').on('click', function () {
 });
 
 
+$(document).ready(function(){
+  
+  $.getJSON("data/data.json",function(data){
+
+    console.log(data.products[0].name);
+  })
+});
+
+
+
+
+
+
+
+
 // ----------------------------------------------------------------------- //
 //to change black dot to check black dot and change the pop up photo
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-$('#dotNumOne').on({'click': function(){
-$('#dotNumOne').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
-  }
-});
-  $('#dotNumTwo').on({'click': function(){
-  $('#dotNumTwo').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
-  }
-});
-    $('#dotNumThree').on({'click': function(){
-    $('#change-image').attr('src','../first-flow/images/leave.jpg');
-  }
-});
+// $('#dotNumOne').on({'click': function(){
+// $('#dotNumOne').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
+//   }
+// });
+//   $('#dotNumTwo').on({'click': function(){
+//   $('#dotNumTwo').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
+//   }
+// });
+//     $('#dotNumThree').on({'click': function(){
+//     $('#change-image').attr('src','../first-flow/images/leave.jpg');
+//   }
+// });
 
-})
+// })
 
   
