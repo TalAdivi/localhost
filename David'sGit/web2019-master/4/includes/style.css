@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header, main, footer, nav, aside, article, section, div {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial;
+}
+
+header {
+    background-color: #F2E9E9;
+    height: 123px;
+    width: 100%;
+    padding-top: 1px;
+}
+
+header nav {
+    width: 300px;
+    height: 33px;
+    margin: 50px auto;
+    background-color: #000000; /*  TEMP  */
+}
+
+footer {
+    background-color: #000000;
+    height: 41px;
+    width: 100%;
+}
+
+/* Layout 1 */
+#layout1 main {
+    width: 881px;
+    height: 860px;
+    margin: 0px auto;
+    background-color: #333333; /*  TEMP  */
+}
+
+#layout1 .text {
+    float: left;
+    width: 50%;
+    height: 120px;
+    background-color: blue;
+}
+
+#layout1 .boxes {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    float: left;
+    width: 50%;
+    height: 500px;
+    background-color: red;
+}
+
+#layout1 .box1 {
+    top: 44px;
+    left: 0px;
+    width: 75px;
+    height: 23px;
+}
+
+#layout1 .box2 {
+    top: 75px;
+    left: 0px;
+    width: 136px;
+    height: 46px;
+}
+
+.clear {
+    clear: both;
+}
+
+.boxes div {
+    position: absolute;
+    background-color: #EBEF18;
+}
+
+#layout1 li {
+    float: left;
+    margin-left: 20px;
+}

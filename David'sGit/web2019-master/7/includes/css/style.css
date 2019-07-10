@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+header,
+footer,
+aside,
+section,
+main,
+article {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #d3d3d3;
+    padding: 10px;
+}
+
+main {
+    width: 100%;
+    margin: 0px auto;
+    border: 1px solid blueviolet;
+    clear: both;
+    text-align: center;
+}
+
+/*main:after {*/
+/*    content: "";*/
+/*    display: block;*/
+/*    clear: both;*/
+/*}*/
+
+/*.test {*/
+/*    position: relative;*/
+/*    float: left;*/
+/*    width: 300px;*/
+/*    height: 300px;*/
+/*    border: 1px solid red;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.toggleShow {*/
+/*    display: block;*/
+/*}*/
+
+
+/* *************EX1************* */
+
+
+/* 1.1 */
+
+@media (min-width: 851px) {
+    .leftCol {
+        float: left;
+        width: 40%;
+        margin-right: 5%;
+        background: yellow;
+        font-size: 1.4vw;
+    }
+    .midCol {
+        float: left;
+        width: 25%;
+        margin-right: 5%;
+        background: #666666;
+        font-size: 1.1vw;
+    }
+    .rightCol {
+        float: right;
+        width: 25%;
+        background: red;
+        font-size: 1.2vw;
+    }
+}
+
+
+/* 1.2 */
+
+@media (max-width: 850px) {
+    /* tablet*/
+
+}
+
+/* 1.3 */
+
+
+
+/*@media (min-width:591px) and (max-width: 850px) {*/
+/*    .leftCol {*/
+/*        float: left;*/
+/*        width: 55%;*/
+/*        margin-right: 5%;*/
+/*        background: yellow;*/
+/*        font-size: 1.4vw;*/
+/*    }*/
+/*    .midCol {*/
+/*        float: right;*/
+/*        width: 35%;*/
+/*        margin-right: 0px;*/
+/*        background: #666666;*/
+/*    }*/
+/*    .rightCol {*/
+/*        float: left;*/
+/*        width: 100%;*/
+/*        background: red;*/
+/*        clear: both;*/
+/*    }*/
+/*}*/
+
+
+
+/* 1.4 */
+
+
+/* @media (min-width:591px) and (max-width: 850px){} */
+
+
+/* 1.5 */
+
+
+/*@media (max-width: 590px) {*/
+/*    .leftCol , .midCol , .rightCol {*/
+/*        float: none;*/
+/*        width: 100%;*/
+/*        margin: 0px;*/
+/*        border-bottom: 1px solid black;*/
+/*        background: yellowgreen;*/
+/*    }*/
+/*}*/
