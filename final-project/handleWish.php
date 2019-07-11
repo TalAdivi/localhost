@@ -16,7 +16,7 @@
     <div id="mainWrapper">
 
         <!-- !logo -->
-        <a href="index.html" id="logoWidth"><div id="logo"></div></a>
+        <a href="coucherHomePage.php" id="logoWidth"><div id="logo"></div></a>
         <div id="profile"><img src="./images/profilePic.png" alt="profilePic" ><a href="#">Log Out</a></div>
         <!-- !/logo -->
         <!-- !search -->
@@ -35,7 +35,7 @@
         <div id="navBar">
             <div class="row">
                 <div class="nav nav-tabs nav-pills" id="nav-tab">
-                    <a class="nav-link " href="./index.html"><span>Home</span> <img src="images/Home_Icon_2.png" alt="picture"
+                    <a class="nav-link " href="./coucherHomePage.php"><span>Home</span> <img src="images/Home_Icon_2.png" alt="picture"
                             class="icons"></a>
                     <a class="nav-link active" href="./handleWish.html"><span>Handle Wish</span> <img src="images/Image_9.png" alt="picture"
                             class="icons"></a>
@@ -78,7 +78,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <th scope="row">
                                 <div class="redDot"></div>
                             </th>
@@ -112,7 +112,7 @@
                             </th>
                             <td colspan="2"><a class="nameLink" href="#">Haim Moshe</a></td>
                             <td>Workout</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>

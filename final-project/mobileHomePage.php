@@ -33,7 +33,7 @@
   </div>
   <div class="text-center">
 
-    <div class="progress-bar" data-percent="40" data-duration="1000" data-color="#ccc,black"></div>
+    <div class="progress-bar" data-percent="60" data-duration="1000" data-color="#ccc,black"></div>
     <div class="text-center profile-pic">
       <img src="./images/guyProfile1.png" class="rounded" alt="user-pic">
       <p class="show-percent"></p>
