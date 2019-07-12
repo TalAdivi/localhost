@@ -10,14 +10,13 @@ function getUserId() {
     return userId;
 }
 
-
 $(document).ready(function(){
     var userId = getUserId();
     console.log(userId);
     users = JSON.parse(sessionStorage.getItem('users'));
     $.each(users,function(i,obj){
       if(obj.user_id == userId){
-
+        sessionStorage.setItem('currUser',JSON.stringify(obj));
         //updating breadcrumb to user name
         $('.breadcrumb').append(
           '<li class="breadcrumb-item"><a href="handleWish.php">Handle Wish</a></li>'+
@@ -32,15 +31,173 @@ $(document).ready(function(){
         )
 
       }
-    })
+    })   
 
     user_diet= JSON.parse(sessionStorage.getItem('meals'));
+    text = '<tbody class="mainTableBody">';
     $.each(user_diet,function(i,obi){
-      console.log(obi);
-    
+      // console.log(obi);
+      if(obi.user_id == userId){
+        if(obi.meal_number == 1){
+         prods = obi.prodes.split(',');
+         $.each(prods,function(i,ob){
+          prodName = ob.split(',')[0].split(':')[0];
+          prodAmount = ob.split(',')[0].split(':')[1];
+          text += '<tr>' +
+          '<td><input type="text" class="form-control" value=' +
+          prodName +
+           '>' +
+          '</td>' +
+          '<td><input type="text" class="form-control" value=' +
+          prodAmount + 
+          '>' +
+          '</td>' +
+      '</tr>';
+         })
+        }
+        text += '</tbody>';
+        $('.mainTableBody').replaceWith(text);
+      }    
     })
-    // currProd = obj.prodes.substring().split(':');
-    
+})
+
+$('button').on('click', function (e) {
+  var userId = getUserId();
+  var text='<tbody class="mainTableBody">';
+ console.log($(this).html());
+ user_diet= JSON.parse(sessionStorage.getItem('meals'));
+ 
+ if($(this).html().match(/First/g) != null){
+  
+  $.each(user_diet,function(i,obi){
+    // console.log(obi);
+    if(obi.user_id == userId){
+       //console.log(obi.prodes);
+       if(obi.meal_number == 1){
+
+         prods = obi.prodes.split(',');
+         $.each(prods,function(i,ob){
+           prodName = ob.split(',')[0].split(':')[0];
+           prodAmount = ob.split(',')[0].split(':')[1];
+          // console.log(prodName);
+          // console.log(prodAmount);
+           text += '<tr>' +
+           '<td><input type="text" class="form-control" value=' +
+           prodName +
+           '>' +
+           '</td>' +
+           '<td><input type="text" class="form-control" value=' +
+           prodAmount + 
+           '>' +
+           '</td>' +
+           '</tr>';
+          })
+          text += '</tbody>';
+          $('.mainTableBody').replaceWith(text);
+        }
+    }
+  
+  })
+ }
+
+ if($(this).html().match(/Second/g) != null){
+  
+  $.each(user_diet,function(i,obi){
+    if(obi.user_id == userId){
+       if(obi.meal_number == 2){
+         prods = obi.prodes.split(',');
+         $.each(prods,function(i,ob){
+           prodName = ob.split(',')[0].split(':')[0];
+           prodAmount = ob.split(',')[0].split(':')[1];
+           text += '<tr>' +
+           '<td><input type="text" class="form-control" value=' +
+           prodName +
+           '>' +
+           '</td>' +
+           '<td><input type="text" class="form-control" value=' +
+           prodAmount + 
+           '>' +
+           '</td>' +
+           '</tr>';
+          })
+          text += '</tbody>';
+          $('.mainTableBody').replaceWith(text);
+        }
+    }
+  })
+ }
+
+ if($(this).html().match(/Third/g) != null){
+  
+  $.each(user_diet,function(i,obi){
+    // console.log(obi);
+    if(obi.user_id == userId){
+       //console.log(obi.prodes);
+       if(obi.meal_number == 3){
+
+         prods = obi.prodes.split(',');
+         $.each(prods,function(i,ob){
+           prodName = ob.split(',')[0].split(':')[0];
+           prodAmount = ob.split(',')[0].split(':')[1];
+          // console.log(prodName);
+           //console.log(prodAmount);
+           text += '<tr>' +
+           '<td><input type="text" class="form-control" value=' +
+           prodName +
+           '>' +
+           '</td>' +
+           '<td><input type="text" class="form-control" value=' +
+           prodAmount + 
+           '>' +
+           '</td>' +
+           '</tr>';
+          })
+          text += '</tbody>';
+          $('.mainTableBody').replaceWith(text);
+        }
+    }
+  
+  })
+ }
+
+//  $('.mainTableBody').replaceWith(
+   
+//  );
 })
 
   
+
+
+
+
+
+// user_diet= JSON.parse(sessionStorage.getItem('meals'));
+// $.each(user_diet,function(i,obi){
+//   // console.log(obi);
+//   if(obi.user_id == userId){
+//      //console.log(obi.prodes);
+//      prods = obi.prodes.split(',');
+//      $.each(prods,function(i,ob){
+//       prodName = ob.split(',')[0].split(':')[0];
+//       prodAmount = ob.split(',')[0].split(':')[1];
+//       console.log(prodName);
+//       console.log(prodAmount);
+//       $('.mainTableBody').append(
+    //     '<tr>' +
+    //     '<td><input type="text" class="form-control" value=' +
+    //     prodName +
+    //      '>' +
+    //     '</td>' +
+    //     '<td><input type="text" class="form-control" value=' +
+    //     prodAmount + 
+    //     '>' +
+    //     '</td>' +
+    // '</tr>' 
+//       )
+
+
+//      })
+//   }
+
+// })
+// currProd = obj.prodes.substring().split(':');

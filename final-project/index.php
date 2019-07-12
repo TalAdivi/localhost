@@ -34,7 +34,9 @@ if (!empty($_POST['loginMail'])) {
             //to get products values
             $strJ = file_get_contents('data/data.json');
             $_SESSION['data'] = json_decode($strJ);
-            header('Location: ' . URL . 'coucherHomePage.php');
+        
+            //not sure about row
+            header('Location: ' . URL . 'coucherHomePage.php?name=?'. $row["name"]);
         } else {
             header('Location: ' . URL . 'mobileHomePage.php');
         }
