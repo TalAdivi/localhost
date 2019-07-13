@@ -14,9 +14,11 @@ $(document).ready(function(){
     var userId = getUserId();
     console.log(userId);
     users = JSON.parse(sessionStorage.getItem('users'));
+    
+    //while(!(users = JSON.parse(sessionStorage.getItem('users')))){}
     $.each(users,function(i,obj){
       if(obj.user_id == userId){
-        sessionStorage.setItem('currUser',JSON.stringify(obj));
+        // sessionStorage.setItem('currUser',JSON.stringify(obj));
         //updating breadcrumb to user name
         $('.breadcrumb').append(
           '<li class="breadcrumb-item"><a href="handleWish.php">Handle Wish</a></li>'+
@@ -29,11 +31,12 @@ $(document).ready(function(){
           obj.name+
           ' Diet</li>'
         )
-
       }
     })   
 
     user_diet= JSON.parse(sessionStorage.getItem('meals'));
+    console.log(user_diet);
+    // while(!(user_diet= JSON.parse(sessionStorage.getItem('meals')))){}
     text = '<tbody class="mainTableBody">';
     $.each(user_diet,function(i,obi){
       // console.log(obi);
@@ -59,11 +62,24 @@ $(document).ready(function(){
         $('.mainTableBody').replaceWith(text);
       }    
     })
+
+
+  $.getJSON("data/data.json",function(data){
+    console.log(data.products[0].name);
+  });
+
+  // calculate daily meal sum
+  var totalProteins = 0;
+  var totalCalories = 0;
+  var totalCarbohydrat = 0;
+
+
 })
 
 $('button').on('click', function (e) {
   var userId = getUserId();
   var text='<tbody class="mainTableBody">';
+  
  console.log($(this).html());
  user_diet= JSON.parse(sessionStorage.getItem('meals'));
  
@@ -79,6 +95,7 @@ $('button').on('click', function (e) {
          $.each(prods,function(i,ob){
            prodName = ob.split(',')[0].split(':')[0];
            prodAmount = ob.split(',')[0].split(':')[1];
+
           // console.log(prodName);
           // console.log(prodAmount);
            text += '<tr>' +
@@ -93,6 +110,7 @@ $('button').on('click', function (e) {
            '</tr>';
           })
           text += '</tbody>';
+          // console.log(text);
           $('.mainTableBody').replaceWith(text);
         }
     }
@@ -122,6 +140,7 @@ $('button').on('click', function (e) {
           })
           text += '</tbody>';
           $('.mainTableBody').replaceWith(text);
+
         }
     }
   })

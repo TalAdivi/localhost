@@ -161,10 +161,9 @@ $(document).ready(function(){
           '</tr>'
         )
       }
-    })
-  }
+    });
 
-  if(currURL.match(/specificDiet/g) != null){
+
 
     var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
 
@@ -177,6 +176,21 @@ $(document).ready(function(){
       }  
 
     });
+  }
+
+  if(currURL.match(/specificDiet/g) != null){
+
+    // var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
+
+    // $.post('query.php',{query: q},function(res){
+    //   if( res == "NULL" )
+    //     console.log('error occured');
+    //   else{
+    //     json = JSON.parse(res);
+    //     sessionStorage.setItem('meals',JSON.stringify(json));
+    //   }  
+
+    // });
 
   }
 

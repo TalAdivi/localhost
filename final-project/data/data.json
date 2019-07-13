@@ -1,68 +1,80 @@
-{
-   "_comment":"All data for 100grams",
-   "products":[
-      {
-         "name": "Chicken Breast",
-         "protein": "31",
-         "carbohydrat": "0",
-         "calories": "165"
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },   
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      },
-      {
-         "name": "",
-         "protein": "",
-         "carbohydrat":"",
-         "calories":""
-      }   
-   ]    
-}
-    
-
-
+[
+   {
+      "name": "Chicken Breast",
+      "protein": "31",
+      "carbohydrat":"0",
+      "calories":"165"
+   },
+   {
+      "name": "Pasta",
+      "protein": "8.1",
+      "carbohydrat":"43.2",
+      "calories":"221"
+   },
+   {
+      "name": "Apple",
+      "protein": "0.3",
+      "carbohydrat":"13.8",
+      "calories":"52"
+   },
+   {
+      "name": "Tuna",
+      "protein": "29",
+      "carbohydrat":"0",
+      "calories":"130"
+   },
+   {
+      "name": "Rice",
+      "protein": "2.66",
+      "carbohydrat":"27.9",
+      "calories":"129"
+   },
+   {
+      "name": "Egg",
+      "protein": "13",
+      "carbohydrat":"0.7",
+      "calories":"143"
+   },
+   {
+      "name": "Bread",
+      "protein": "7.64",
+      "carbohydrat":"50.61",
+      "calories":"266"
+   },
+   {
+      "name": "Tomato",
+      "protein": "0.9",
+      "carbohydrat":"3.9",
+      "calories":"18"
+   },
+   {
+      "name": "Thina Golmit",
+      "protein": "25.5",
+      "carbohydrat":"10.7",
+      "calories":"687"
+   },
+   {
+      "name": "Yogurt",
+      "protein": "4.6",
+      "carbohydrat":"4.3",
+      "calories":"63"
+   },
+   {
+      "name": "Cucumber",
+      "protein": "0.65",
+      "carbohydrat":"3.63",
+      "calories":"15"
+   },
+   {
+      "name": "Beef",
+      "protein": "27.31",
+      "carbohydrat":"0",
+      "calories":"174"
+   },
+   {
+      "name": "Peach",
+      "protein": "27.31",
+      "carbohydrat":"0.91",
+      "calories":"9.54"
+   }
+]
