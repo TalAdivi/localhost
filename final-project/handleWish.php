@@ -16,7 +16,7 @@
     <div id="mainWrapper">
 
         <!-- !logo -->
-        <a href="index.html" id="logoWidth"><div id="logo"></div></a>
+        <a href="coucherHomePage.php" id="logoWidth"><div id="logo"></div></a>
         <div id="profile"><img src="./images/profilePic.png" alt="profilePic" ><a href="#">Log Out</a></div>
         <!-- !/logo -->
         <!-- !search -->
@@ -35,7 +35,7 @@
         <div id="navBar">
             <div class="row">
                 <div class="nav nav-tabs nav-pills" id="nav-tab">
-                    <a class="nav-link " href="./index.html"><span>Home</span> <img src="images/Home_Icon_2.png" alt="picture"
+                    <a class="nav-link " href="./coucherHomePage.php"><span>Home</span> <img src="images/Home_Icon_2.png" alt="picture"
                             class="icons"></a>
                     <a class="nav-link active" href="./handleWish.html"><span>Handle Wish</span> <img src="images/Image_9.png" alt="picture"
                             class="icons"></a>
@@ -78,7 +78,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <th scope="row">
                                 <div class="redDot"></div>
                             </th>
@@ -112,16 +112,16 @@
                             </th>
                             <td colspan="2"><a class="nameLink" href="#">Haim Moshe</a></td>
                             <td>Workout</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
             <!--! /Wish Table -->
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>

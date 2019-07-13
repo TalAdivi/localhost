@@ -1,35 +1,11 @@
 
-clicked = false;
-$( "button" ).on( "click", function( event ) {
-  var target = $( event.target ),
-    progressbar = $( ".progress-bar" ),
-    progressbarValue = progressbar.find( ".progress-bar" );
-    
-
-   if ( target.is( "#colorButton" ) ) {
-       console.log('here');
-    
-       progressbar.css({"background-color": '#' + Math.floor( Math.random() * 16777215 ).toString( 16 )});
-
-  } else if ( target.is( "#falseButton" ) ) {
-      if(!clicked){
-          progressbar.addClass("progress-bar-striped");
-          progressbar.addClass("progress-bar-animated");
-        clicked = true;
-      }
-      else{
-          console.log("in else");
-        progressbar.removeClass("progress-bar-striped");
-        progressbar.removeClass("progress-bar-animated");
-        clicked = false;
-      }
-  }
-});
 
 $("button").on("click",function(curr){
   $("button").removeClass("active");
   $(this).toggleClass("active");
 })
+
+
 
 
 $('.addIcon').on("click",function(){
@@ -48,14 +24,12 @@ $('.addIcon').on("click",function(){
 
 
 
-
-
 // round progress bar logic
 $.fn.loading = function () {
   var DEFAULTS = {
     backgroundColor: '#b3cef6',
     progressColor: '#4b86db',
-    percent: 75,
+    percent: 0,
     duration: 2000
   };
 
@@ -70,7 +44,7 @@ $.fn.loading = function () {
     };
     // console.log(opts);
 
-    $target.append('<div class="background"></div><div class="rotate"></div><div class="left"></div><div class="right"></div><div class=""><span>' + opts.percent + '%</span></div>');
+    $target.append('<div class="background"></div><div class="rotate"></div><div class="left"></div><div class="right"></div><div class=""><span>'+'</span></div>');
 
     $target.find('.background').css('background-color', opts.backgroundColor);
     $target.find('.left').css('background-color', opts.backgroundColor);
@@ -109,25 +83,147 @@ $('input').on('click', function () {
 });
 
 
+$(document).ready(function(){
+  
+ 
+  currURL = window.location.href;
+  console.log(currURL); 
+
+  // to see witch page i am
+  if(currURL.match(/coucherHomePage/) != null)
+  {
+    var q = "SELECT * FROM `tbl_users_202`";
+
+    $.post('query.php',{query: q},function(res){
+      if( res == "NULL" )
+        console.log('error occured');
+      else{
+        var json = JSON.parse(res);
+        sessionStorage.setItem('users',JSON.stringify(json));
+  
+        
+        $.each(json,function(i,obj){
+          if(obj.newUser == 1)
+          {
+            $("#newUsers").append(
+              '<tr>'+
+              '<th scope="row" class="remove_top_border_th">'+
+                '<div class="orangeDot"></div>'+
+              '</th>'+
+              '<td colspan="3" class="remove_top_border_th"><a class="nameLink" href="#">'+
+              obj.name +
+              '</a></td>'+
+            '</tr>'
+            )
+          }
+          else{
+            if(obj.wishes != null){
+            $('#usersWishes').append(
+              '<tr>' +
+              '<th scope="row">' +
+                '<div class="redDot"></div>' +
+              '</th>' +
+              '<td colspan="2"><a class="nameLink" href="#">'+
+              obj.name +
+              '</a></td>'+
+              '<td>'+
+                obj.wishes +
+                '</td>'+
+            '</tr>'
+            )
+            }
+          }
+        })
+        //console.log(JSON.parse(sessionStorage.getItem('users')));
+      }
+    });
+  }
+
+
+  if(currURL.match(/handleWish/g) != null){
+    users = JSON.parse(sessionStorage.getItem('users'));
+    console.log(users);
+    $.each(users,function(i,obj){
+      if(obj.wishes != null){
+        $('#wishesTable tbody').append(
+          '<tr>'+
+          '<th scope="row">'+
+              '<div class="redDot"></div>'+
+          '</th>'+
+          '<td colspan="2"><a class="nameLink" href=specificWish.php?user_id='+
+          obj.user_id+
+          '>'+
+          obj.name +
+         ' </a></td>'+
+            '<td>'+
+            obj.wishes+
+            '</td>'+
+          '</tr>'
+        )
+      }
+    });
+
+
+
+    var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
+
+    $.post('query.php',{query: q},function(res){
+      if( res == "NULL" )
+        console.log('error occured');
+      else{
+        json = JSON.parse(res);
+        sessionStorage.setItem('meals',JSON.stringify(json));
+      }  
+
+    });
+  }
+
+  if(currURL.match(/specificDiet/g) != null){
+
+    // var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
+
+    // $.post('query.php',{query: q},function(res){
+    //   if( res == "NULL" )
+    //     console.log('error occured');
+    //   else{
+    //     json = JSON.parse(res);
+    //     sessionStorage.setItem('meals',JSON.stringify(json));
+    //   }  
+
+    // });
+
+  }
+
+});
+
+
+
+
+
+ // $.getJSON("data/data.json",function(data){
+
+  // });
+
+
 // ----------------------------------------------------------------------- //
 //to change black dot to check black dot and change the pop up photo
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-$('#dotNumOne').on({'click': function(){
-$('#dotNumOne').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
-  }
-});
-  $('#dotNumTwo').on({'click': function(){
-  $('#dotNumTwo').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
-  }
-});
-    $('#dotNumThree').on({'click': function(){
-    $('#change-image').attr('src','../first-flow/images/leave.jpg');
-  }
-});
+// $('#dotNumOne').on({'click': function(){
+// $('#dotNumOne').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
+//   }
+// });
+//   $('#dotNumTwo').on({'click': function(){
+//   $('#dotNumTwo').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
+//   }
+// });
+//     $('#dotNumThree').on({'click': function(){
+//     $('#change-image').attr('src','../first-flow/images/leave.jpg');
+//   }
+// });
 
-})
+// })
 
 
 

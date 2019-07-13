@@ -4,6 +4,13 @@ include 'config.php';
 
 session_start();
 
+// $query = "SELECT * FROM `tbl_users_202`"; 
+// $model = mysqli_query($connection, $query);
+// $allUsers = mysqli_fetch_all($model,MYSQLI_ASSOC);
+// $_SESSION['allUsers'] = json_encode($allUsers);
+// var_dump($allUsers);
+
+
 if (!empty($_POST['loginMail'])) {
     //echo 'Form sent    ';
     $query = "SELECT * FROM tbl_users_202 WHERE email='" . $_POST["loginMail"]
@@ -22,13 +29,17 @@ if (!empty($_POST['loginMail'])) {
         $_SESSION["user_id"] = $row["user_id"];
         $_SESSION["user_name"] = $row["name"];
 
-        if($row["coacher"] == 1){
-            header('Location: ' . URL . 'posts.php');    
+
+        if ($row["coacher"] == 1) {
+            //to get products values
+            $strJ = file_get_contents('data/data.json');
+            $_SESSION['data'] = json_decode($strJ);
+        
+            //not sure about row
+            header('Location: ' . URL . 'coucherHomePage.php?name=?'. $row["name"]);
+        } else {
+            header('Location: ' . URL . 'mobileHomePage.php');
         }
-        else{
-            echo "Not a coacher";
-        }
-        // header('Location: ' . URL . 'posts.php');
     } else {
         $message = "Invalid user name or password!";
     }
@@ -47,6 +58,9 @@ if (!empty($_POST['loginMail'])) {
             <input type="password" class="form-control" name="loginPass" id="loginPass" placeholder="Enter Password">
         </div>
         <button type="submit" class="btn btn-primary">Log Me In</button>
-        <div class="error-message"><?php if (isset($message)) {echo $message;} ?></div>
+        <div class="error-message"><?php if (isset($message)) {
+                                        echo $message;
+                                    } ?></div>
     </form>
+    <script src="includes/main.js"></script>
 </div>

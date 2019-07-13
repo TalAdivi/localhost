@@ -282,6 +282,11 @@ border-top: none;
     height: 355px;
 }
 
+#coucherFlow #show-percent{
+    
+    margin-left: 50%;
+}
+
 #coucherFlow #move_word{
     float: right;
     margin-right: 80px;

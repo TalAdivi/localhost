@@ -16,7 +16,7 @@
     <div id="mainWrapper">
 
         <!-- !logo -->
-        <a href="index.html" id="logoWidth"> <div id="logo"></div></a>
+        <a href="coucherHomePage.php" id="logoWidth"> <div id="logo"></div></a>
         <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="#">Log Out</a></div>
         <!-- !/logo -->
 
@@ -38,7 +38,7 @@
         <div id="navBar">
             <div class="row">
                 <div class="nav nav-tabs nav-pills" id="nav-tab">
-                    <a class="nav-link " href="./index.html"><span>Home</span> <img src="images/Home_Icon_2.png"
+                    <a class="nav-link " href="./coucherHomePage.php"><span>Home</span> <img src="images/Home_Icon_2.png"
                         alt=""  class="icons"></a>
                     <a class="nav-link active" href="./handleWish.html"><span>Handle Wish</span> <img src="images/Image_9.png"
                         alt=""  class="icons"></a>
@@ -59,9 +59,9 @@
             <!-- !breadCrumb -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="handleWish.html">Handle Wish</a></li>
+                    <!-- <li class="breadcrumb-item"><a href="handleWish.html">Handle Wish</a></li>
                     <li class="breadcrumb-item"><a href="specificWish.html">Zion Wish</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Zion Diet</li>
+                    <li class="breadcrumb-item active" aria-current="page">Zion Diet</li> -->
                 </ol>
             </nav>
             <!-- !/breadCrumb -->
@@ -70,9 +70,10 @@
             <div class="alert alert-primary" id="currPageTitle" role="alert">
                 <h4>Zion Baruchi Diet</h4>
             </div>
-            <!-- !/current page indicator -->
+            <tr !/current page indicator -->
 
             <!--! meal main table -->
+            
             <div class="mealTable">
                 <form class="form-horizontal" action="./getParams.php" method="get" autocomplete="on" id="mainForm">
                     <div class="table-responsive">
@@ -83,16 +84,16 @@
                                 <th>Amount (Grams)</th>
                                 </tr>
                             </thead>
-                            <tbody class="mainTableBody">
-                                <tr>
+                            <tbody class="mainTableBody">             
+                                <!-- <tr>
                                     <td><input type="text" class="form-control" value="Chiken Brest"
                                             name="first_prod_name" /></td>
                                     <td><input type="text" class="form-control" value="300" name="first_prod_amount" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" class="form-control" value="Rice" name="sec_prod_name" />
-                                    </td>
+                                <td><input type="text" class="form-control" value="Rice" name="sec_prod_name" />
+                            </td>
                                     <td><input type="text" class="form-control" value="200" name="sec_prod_amount" />
                                     </td>
                                 </tr>
@@ -109,7 +110,7 @@
                                     </td>
                                     <td><input type="text" class="form-control" value="220" name="foured_prod_amount" />
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -129,11 +130,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td> <button type="button" class="btn btn-outline-secondary ">First Meal</button>
+                                <td> <button type="button" class="btn btn-outline-secondary active">First Meal</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td> <button type="button" class="btn btn-outline-secondary active">Second Meal</button>
+                                <td> <button type="button" class="btn btn-outline-secondary ">Second Meal</button>
                                 </td>
                             </tr>
 
@@ -144,6 +145,45 @@
                         </tbody>
                     </table>
                 </div>
+
+
+                                <!-- <div class="row">
+                <div class="col-4">
+                    <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">t</div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">a</div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">.h.</div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">.q.</div>
+                    </div>
+                </div>
+                </div> -->
+
+
+
+
+                                <!-- List group -->
+                <!-- <div class="list-group" id="myList" role="tablist">
+                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
+                </div> -->
+
+                <!-- Tab panes -->
+                <!-- <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel">.1.</div>
+                <div class="tab-pane" id="profile" role="tabpanel">.w.</div>
+                <div class="tab-pane" id="messages" role="tabpanel">1..</div>
+                <div class="tab-pane" id="settings" role="tabpanel">..g</div>
+                </div> -->
 
             </div>
             <!--! /choose meal -->
@@ -222,16 +262,17 @@
             <!-- <div class="clear"></div> -->
 
         </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-    <script src="includes/main.js"></script>
+            <script src="includes/main.js"></script>
+            <script src="includes/get_user_meal_details.js"></script>
 
     </div>        
 </body>
