@@ -8,19 +8,7 @@ $("button").on("click",function(curr){
 
 
 
-$('.addIcon').on("click",function(){
-  var table_row = $(
-      '<tr>' +
-      '<td>' +
-      '<input type="text" class="form-control" placeholder="Product name">' +
-      '</td>' +
-      '<td>' +
-      '<input type="number" class="form-control" placeholder="0">' +
-      '</td>' +
-      '</tr>'
-  )
-  $('.mainTableBody').append(table_row);
-})
+
 
 
 
