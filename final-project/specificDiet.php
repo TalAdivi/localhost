@@ -27,7 +27,7 @@
                     <button class="btn searchBtn" type="button" id="button-addon1"><img src="./images/Search_Icon_1.png" alt="search icon"
                             class="searchIcon"></button>
                 </div>
-                <input type="text" class="form-control" placeholder="">
+                <tr type="text" class="form-control" placeholder="">
             </div>
         </div>
         <!-- !/search -->
@@ -201,7 +201,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <td><input type="text" class="form-control" value="Carbohydrat" readonly="readonly" />
                                 </td>
                                 <td><input type="text" class="form-control" value="300" readonly="readonly" /></td>
@@ -213,7 +213,7 @@
                             <tr>
                                 <td><input type="text" class="form-control" value="Calories" readonly="readonly" /></td>
                                 <td><input type="text" class="form-control" value="500" readonly="readonly" /></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -235,7 +235,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <td><input type="text" class="form-control" value="Carbohydrat" readonly="readonly" />
                                 </td>
                                 <td><input type="text" class="form-control" value="500" readonly="readonly" /></td>
@@ -248,7 +248,7 @@
                             <tr>
                                 <td><input type="text" class="form-control" value="Calories" readonly="readonly" /></td>
                                 <td><input type="text" class="form-control" value="700" readonly="readonly" /></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -259,6 +259,7 @@
 
             <!-- <div class="clear"></div> -->
             <input type="submit" value="Submit" class="btn btn-primary done-btn" form="mainForm"><br>
+            <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
             <!-- <div class="clear"></div> -->
 
         </div>

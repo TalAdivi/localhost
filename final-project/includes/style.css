@@ -50,6 +50,12 @@ main, nav, article, aside, section, header, footer {
     clear: both;
 }
 
+#coucherFlow .options{
+    float: left;
+    height: 37px;
+    width: 100%;
+}
+
 #coucherFlow #logoWidth{
     float: left;
     position: relative;
