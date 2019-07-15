@@ -56,6 +56,15 @@ main, nav, article, aside, section, header, footer {
     width: 100%;
 }
 
+#coucherFlow .all-tables{
+    width: 250px;
+    margin-top: 75px;
+    float: left;
+    position: relative;
+    display: block;
+    top: 0px;
+}
+
 #coucherFlow #logoWidth{
     float: left;
     position: relative;

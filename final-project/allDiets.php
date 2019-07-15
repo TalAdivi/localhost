@@ -77,7 +77,7 @@
                         <table class="table table-bordered table-striped table-highlight"> 
                             <thead>
                                 <tr>
-                                <th> <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon">Products</th>
+                                <th><img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addRow'>Products</th>
                                 <th>Amount (Grams)</th>
                                 </tr>
                             </thead>
@@ -97,23 +97,14 @@
                     <table class="table table-bordered table-highlight">
                         <thead>
                             <tr>
-                            <th>Choose Meal</th>
+                            <th> <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addMealName'>Choose Meal</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td> <button type="button" class="btn btn-outline-secondary active">First Meal</button>
+                                <td> <select class="options" id="choose-meal-option"></select>
                                 </td>
                             </tr>
-                            <tr>
-                                <td> <button type="button" class="btn btn-outline-secondary ">Second Meal</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td> <button type="button" class="btn btn-outline-secondary">Third Meal</button> </td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -144,30 +135,14 @@
             <!-- <div class="clear"></div> -->
 
             <!--! Daily Meal Sum Table -->
-            <div class="dailyMealSumTalbe">
-                <span class="badge badge-pill badge-primary" id="dailyMealSumBadge">Daily Meal Sum</span>
 
-                <div class="table-responsive">
-                    <table class="table table-bordered  table-highlight">
-                        <thead>
-                        <tr>
-                            <th> Nutritional Values</th>
-                            <th>Amount (Grams)</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
 
             <!--! /Daily Meal Sum Table -->
 
             <!-- <div class="clear"></div> -->
-            <input type="submit" value="Submit" class="btn btn-primary done-btn" form="mainForm"><br>
+            <!-- <input type="submit" value="Submit" class="btn btn-primary done-btn" form="mainForm"><br> -->
             <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+            <button type="button" class="btn btn-primary" id="deleteBtn">Delete</button>
             <!-- <div class="clear"></div> -->
 
         </div>
@@ -181,8 +156,10 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
             <script src="includes/main.js"></script>
-            <script src="includes/get_user_meal_details.js"></script>
-
-    </div>        
-</body>
-</html>
+            <script src="includes/get_meals_details.js"></script>
+        </div>        
+    </body>
+    </html>
+    
+    
+    

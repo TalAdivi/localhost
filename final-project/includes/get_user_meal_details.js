@@ -8,7 +8,6 @@ var createOptions = function(Json,selected){
   var allOptions = '';
 
   $.each(Json,function(i,obi){
-    // console.log(obi.name);
     optionsNames.push(JSON.stringify(obi.name));
     if(selected == obi.name){
       allOptions += '<option value="' + obi.name + '" selected>' + obi.name + '</option>';
@@ -26,7 +25,6 @@ makeTextOfProdes = function(){
   userId = getUserId();
   user_diet= JSON.parse(sessionStorage.getItem('meals'));
   $.each(user_diet,function(i,obi){
-    // console.log(obi);
     if(obi.user_id == userId){
       for (j = 0 ; j < 3 ; ++j){
 
@@ -46,7 +44,6 @@ makeTextOfProdes = function(){
             calNutritionsVal(mealSumArr,j,prodName,prodAmount,prodsInfo);
           })
           mealSumArr[j].text += '</tbody>';
-          // console.log(mealSumArr[j].text);
           createMealSumTable(mealSumArr[j]);
         }
       }  
@@ -57,40 +54,20 @@ makeTextOfProdes = function(){
 function getUserId() {
     var aKeyValue = window.location.search.substring(1).split('&'), 
     userId = aKeyValue[0].split("=")[1];
-    //console.log(aKeyValue[0]);
-
-    // console.log(window.location);
 
     return userId;
 }
 
-// var getCurrOption = function(prodName) {
-//   $.each(optionsNames,function(i,op){
-//     // console.log(JSON.parse(op));
-//     // console.log(prodName);
-//     if(prodName == JSON.parse(op)){
-//         return JSON.parse(op);
-//       }
-//     });
-// }
 computeProdAmountText = function(mealSumArr,j,prodName,prodAmount,idIndexs){
   var options = createOptions(prodsInfo,prodName);
 
-  // console.log(currOption);
-    
   mealSumArr[j].text += '<tr>' + 
   '<td>' + '<select class="options"' +
   'id=' +
   idAutoIncrease++ +
   '>' +   options +  '</select>' +
 
-  // '<input type="text" class="form-control "'+
-  //   'id=' +
-  //   idAutoIncrease++ +
-  //   ' value=' +
-  //   prodName +
-  //   '>' +
-  // '</td>' +
+  
   '<td>' + 
   '<input type="text" class="form-control "' +
     'id=' +
@@ -98,7 +75,6 @@ computeProdAmountText = function(mealSumArr,j,prodName,prodAmount,idIndexs){
    ' value=' +
     prodAmount + 
     '>' +
-    // '</select>' +
   '</td>' +
   '</tr>';
 
@@ -107,29 +83,6 @@ computeProdAmountText = function(mealSumArr,j,prodName,prodAmount,idIndexs){
     mealSumArr[j].IDs[idIndexs.i++] = idAutoIncrease - 1 ;
 }
 
-// computeProdAmountText = function(mealSumArr,j,prodName,prodAmount,idIndexs){
-    
-//   mealSumArr[j].text += '<tr>' +
-//   '<td><input type="text" class="form-control "'+
-//     'id=' +
-//     idAutoIncrease++ +
-//     ' value=' +
-//     prodName +
-//     '>' +
-//   '</td>' +
-//   '<td><input type="text" class="form-control "' +
-//     'id=' +
-//     idAutoIncrease++ +
-//    ' value=' +
-//     prodAmount + 
-//     '>' +
-//   '</td>' +
-//   '</tr>';
-
-//   // to see witch IDs of each input are in the meal
-//   mealSumArr[j].IDs[idIndexs.i++] = idAutoIncrease - 2 ;
-//   mealSumArr[j].IDs[idIndexs.i++] = idAutoIncrease - 1 ;
-// }
 
 calNutritionsVal = function(mealSumArr,j,prodName,prodAmount,prodsInfo){
 
@@ -144,9 +97,6 @@ calNutritionsVal = function(mealSumArr,j,prodName,prodAmount,prodsInfo){
 }
 
 createMealSumTable = function(mealSumArr,j){
-  // console.log(mealSumArr[j].protein);
-  // console.log(mealSumArr[j].calories);
-  // console.log(mealSumArr[j].carbohydrat);
 $('.mealSumTalbe tbody').replaceWith(
   '<tbody>'+
   '<tr>' +
@@ -262,40 +212,29 @@ $(document).ready(function(){
       carbohydrat = 0;
       dietID = 0;
       IDs = [];
-      // text = '<tbody class="mainTableBody">';
 
       constructor(text = '<tbody class="mainTableBody">'){
-
-        // this.protein = protein;
-        // this.calories = calories;
-        // this.carbohydrat = carbohydrat;
         this.text = text;
       }
     }
 
 
     mealSumArr = [new MealSum(),new MealSum(), new MealSum()];
-    // console.log(mealSumArr);
 
     // calculate daily meal sum
     var totalProteins = 0;
     var totalCalories = 0;
     var totalCarbohydrat = 0;
     
-    // console.log(prodsInfo)
-
     var temp = createOptions(prodsInfo);
 
-    // console.log(temp);
+    
 
-
-    // optionsNames.push('111');
-
-    // console.log(optionsNames);
 
     $.each(user_diet,function(i,obi){
       // console.log(obi);
       if(obi.user_id == userId){
+        
         for (j = 0 ; j < 3 ; ++j){
 
           // creating to products and amount of each meal
@@ -303,6 +242,8 @@ $(document).ready(function(){
             mealSumArr[j].dietID = obi.diet_id;
             var idIndexs = {i:0};
             prods = obi.prodes.split(',');
+            
+      
 
             $.each(prods,function(i,ob){
               prodName = ob.split(',')[0].split(':')[0];
@@ -315,8 +256,6 @@ $(document).ready(function(){
               calNutritionsVal(mealSumArr,j,prodName,prodAmount,prodsInfo);
             })
             mealSumArr[j].text += '</tbody>';
-            // console.log(mealSumArr[j].text);
-            // createMealSumTable(mealSumArr[j]);
           }
         }  
       }    
@@ -331,9 +270,6 @@ $(document).ready(function(){
 
     // post daily nutritions sum table
     createDailyMealSumTable(totalCalories,totalCarbohydrat,totalProteins);
-
-
-
 })
 
 $('button').on('click', function () {
@@ -372,8 +308,6 @@ $('button').on('click', function () {
 
 })
 
-
-
 $('.addIcon').on("click",function(){
   var table_row = $(
       '<tr>' +
@@ -389,15 +323,6 @@ $('.addIcon').on("click",function(){
 })
 
 $('#saveBtn').on('click',function(){
-  // console.log($('.mainTableBody').html());
-
-  // updatedTableText = $('.mainTableBody').html();
-
-
-  // console.log($('bla').val());
-  
-  //  console.log(mealSumArr[currentMeal].IDs);
-
   updatedText = '';
    $.each( mealSumArr[currentMeal].IDs,function(i,obi){
      currID = '#' + JSON.stringify(obi);
@@ -408,7 +333,6 @@ $('#saveBtn').on('click',function(){
       }else{
         updatedText +=  $(currID).val() + ':';
       }
-      // console.log(updatedText);
    })
 
   //  to remove the last char ',' from the end 
@@ -421,17 +345,10 @@ $('#saveBtn').on('click',function(){
        mealSumArr[currentMeal].dietID +
        "'";
 
-      //  console.log(q); 
-
   $.when( $.post('query.php',{query: q},function(res){
     // var updatedJson;
     if( res == "NULL" )
       console.log('error occured');
-    else{
-      // updatedJson = JSON.parse(res);
-      // console.log(res);
-      // sessionStorage.setItem('meals',JSON.stringify(updatedJson));
-    }  
 
   })).done(function(){
     var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
@@ -446,31 +363,9 @@ $('#saveBtn').on('click',function(){
         sessionStorage.setItem('meals',JSON.stringify(json));
       }  
 
-      // makeTextOfProdes();
     });
   });
-
-  // updating the text in mealSumArr to the updated one
-  
-  
-
-  
-
-
-    
-// $sql = "UPDATE tbl_diet_202 SET name ='$_POST[name]', prodes='$_POST[prodes]' WHERE diet_id='$_POST[diet_id]' ";
-// if(mysqli_query($connection, $sql))
-// header("refresh:1;" .URL. "specificDiet.php");
-// else
-// echo "NOT UPDATE";
-
-
 });
 
 
 
-// $('input').on('click',function(){
-//   console.log($(this).val());
-//   console.log('1');
-// });
-  

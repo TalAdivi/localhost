@@ -151,8 +151,6 @@ $(document).ready(function(){
       }
     });
 
-
-
     var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
 
     $.post('query.php',{query: q},function(res){
@@ -177,40 +175,13 @@ $(document).ready(function(){
     //     json = JSON.parse(res);
     //     sessionStorage.setItem('meals',JSON.stringify(json));
     //   }  
-
     // });
 
   }
 
+  if(currURL.match(/allDiets/g) != null){
+   
+    
+  }
+
 });
-
-
-
-
-
- // $.getJSON("data/data.json",function(data){
-
-  // });
-
-
-// ----------------------------------------------------------------------- //
-//to change black dot to check black dot and change the pop up photo
-
-// $(document).ready(function(){
-
-// $('#dotNumOne').on({'click': function(){
-// $('#dotNumOne').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
-//   }
-// });
-//   $('#dotNumTwo').on({'click': function(){
-//   $('#dotNumTwo').attr('src','../first-flow/images/Check_Circle_Icon_1.png');
-//   }
-// });
-//     $('#dotNumThree').on({'click': function(){
-//     $('#change-image').attr('src','../first-flow/images/leave.jpg');
-//   }
-// });
-
-// })
-
-  
