@@ -594,6 +594,7 @@ height: 501px;
             height: 40px;
             margin-top: 20px;
            margin-left: 10px;
+           clear: both;
   }
       #userFlow .btn-secondary {
           color: black !important; 
@@ -621,6 +622,8 @@ height: 501px;
           /* margin-top: 60px;  */
           float: left;
           width: 100px;
+          clear: both;
+
       }
   
   
@@ -628,6 +631,7 @@ height: 501px;
           margin-top: 60px; 
           float: left;
           width: 100px;
+          clear: both;
      }
   
   
@@ -645,6 +649,8 @@ height: 501px;
           background-color: gainsboro;
           width: 100%;
           height: 90px;
+          clear: both;
+
       }
   
       #userFlow #special-footer .row{
@@ -976,7 +982,11 @@ height: 501px;
       margin: 8% 4% 0% 4%;
       margin-left: 42px !important;
   } 
-  
+
+  .custom-select{
+  margin-left: 69px;
+  width: 70% !important;
+  margin-top: 23px;
   }
 
 
