@@ -3,10 +3,6 @@ var userName, userWishes;
 function getUserId() {
     var aKeyValue = window.location.search.substring(1).split('&'), 
     userId = aKeyValue[0].split("=")[1];
-    //console.log(aKeyValue[0]);
-
-    // console.log(window.location);
-
     return userId;
 }
 
@@ -77,7 +73,6 @@ $(document).ready(function(){
         $('#show-percent').append(
           obj.progress + '%'
         )
-        
 
       }
     })

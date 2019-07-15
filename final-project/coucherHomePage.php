@@ -1,7 +1,3 @@
-<?php
-// session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,8 +67,6 @@
 
       <!--! Wish Table -->
       <div id="wishesTable">
-
-
         <div class="badge badge-pill badge-primary Wishes_title">Wishes</div>
         <table class="table table-hover usersTable" id="circle_table">
           <thead>
@@ -84,37 +78,11 @@
             </tr>
           </thead>
           <tbody id="usersWishes">
-            <!-- <tr>
-              <th scope="row">
-                <div class="redDot"></div>
-              </th>
-              <td colspan="2"><a class="nameLink" href="#">Haim moshe</a></td>
-              <td>Workout</td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="redDot"></div>
-              </th>
-              <td colspan="2"><a class="nameLink" href="./specificWish.html">Zion Baruchi</a></td>
-              <td>Diet</td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="redDot"></div>
-              </th>
-              <td colspan="2"><a class="nameLink" href="#">Eran Zehavit</a></td>
-              <td>Other</td>
-            </tr>
-            <tr>
-              <th scope="row"><img src="images/Image_9.png" alt="picture" class="icons tableIcon"></th>
-              <td colspan="3" class="see_more"><a href="./handleWish.html">See More</a></td>
-            </tr> -->
           </tbody>
         </table>
       </div>
       <!--! /Wish Table -->
 
-      <!-- <div class="clear"></div> -->
 
       <!--! User Table -->
 
@@ -122,29 +90,6 @@
         <div class="badge badge-pill badge-primary Wishes_title">New Users</div>
         <table class="table table-hover usersTable" id="circle_table_another">
           <tbody id="newUsers">
-            <!-- <tr>
-              <th scope="row" class="remove_top_border_th">
-                <div class="orangeDot"></div>
-              </th>
-              <td colspan="3" class="remove_top_border_th"><a class="nameLink" href="#">Alon Mizrhit</a></td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="orangeDot"></div>
-              </th>
-              <td colspan="3"><a class="nameLink" href="#">Gal Gadot</a></td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="orangeDot"></div>
-              </th>
-              <td colspan="3"><a class="nameLink" href="#">Assi Cohen</a></td>
-
-            </tr>
-            <tr>
-              <th scope="row"><img src="images/Person_Add_Icon_1.png" alt="picture" class="icons tableIcon"></th>
-              <td colspan="3" class="see_more"><a href="#">See More</a></td>
-            </tr> -->
           </tbody>
         </table>
       </div>
@@ -158,5 +103,4 @@
     </div>
   </div>
 </body>
-
 </html>

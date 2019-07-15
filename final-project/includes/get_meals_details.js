@@ -1,13 +1,60 @@
 var idAutoIncrease = 0;
 var currentMeal = 0;
 var newDietIDs = [];
-var diets = JSON.parse(sessionStorage.getItem('allDiets'));
+var diets;
+
+var createMealSumTable = function(currDiet){
+  $('.mealSumTalbe tbody').replaceWith(
+    '<tbody>'+
+    '<tr>' +
+    '<td><input type="text" class="form-control" value='+
+    "Carbohydrat"+
+    ' readonly="readonly">'+
+    '</td>'+
+    '<td><input type="text" class="form-control" value='+
+    currDiet.carbohydrat+
+    ' readonly="readonly">'+'</td>'+
+  '</tr>'+
+  '<tr>' +
+    '<td><input type="text" class="form-control" value='+
+    "Proteins"+
+    ' readonly="readonly">'+'</td>'+
+    '<td><input type="text" class="form-control" value='+
+    currDiet.protein+
+    ' readonly="readonly">'+'</td>'+
+  '</tr>'+
+  '<tr>' +
+    '<td><input type="text" class="form-control" value='+
+    "Calories"+
+    ' readonly="readonly">'+'</td>'+
+    '<td><input type="text" class="form-control" value='+
+    currDiet.calories+
+    ' readonly="readonly">'+'</td>'+
+  '</tr>' +
+  '</tbody>'
+  )
+}
+
+var calNutritionsVal = function(tableName,prodName,prodAmount,prodsInfo){
+
+  $.each(diets,function(i,currDiet){
+    if(currDiet.name == tableName){
+      $.each(prodsInfo,function(j,currProd){
+        if(currProd.name == prodName){
+          currDiet.protein += parseInt((currProd.protein * (prodAmount/100)).toFixed(2));
+          currDiet.calories += parseInt((currProd.calories * (prodAmount/100)).toFixed(2));
+          currDiet.carbohydrat += parseInt((currProd.carbohydrat * (prodAmount/100)).toFixed(2));
+        }
+        return;
+      });
+    }
+  });
+
+}
 
 var prodAmountTextNewTable = function (prodName,prodAmount) { 
   var options = createOptions(prodsInfo,prodName);
   var text = '';
-
-
   text = '<tr>' + 
   '<td>' + '<select class="options"' +
   'id=' +
@@ -42,35 +89,7 @@ var createGeneralOptions = function(Json){
   return allOptions;
 }
 
-// makeTextOfProdes = function(){
-//   userId = getUserId();
-//   user_diet= JSON.parse(sessionStorage.getItem('meals'));
-//   $.each(user_diet,function(i,obi){
-//     if(obi.user_id == userId){
-//       for (j = 0 ; j < 3 ; ++j){
 
-//         // creating to products and amount of each meal
-//         if(obi.meal_number == j + 1){
-//           mealSumArr[j].dietID = obi.diet_id;
-//           var idIndexs = {i:0};
-//           prods = obi.prodes.split(',');
-
-//           $.each(prods,function(i,ob){
-//             prodName = ob.split(',')[0].split(':')[0];
-//             prodAmount = ob.split(',')[0].split(':')[1];
-
-//             // creating products/amount table
-//             computeProdAmountText(mealSumArr,j,prodName,prodAmount,idIndexs);
-//             // calculating meal nutrition vals
-//             calNutritionsVal(mealSumArr,j,prodName,prodAmount,prodsInfo);
-//           })
-//           mealSumArr[j].text += '</tbody>';
-//           createMealSumTable(mealSumArr[j]);
-//         }
-//       }  
-//     }    
-//   })
-// }
 
 var createOptions = function(Json,selected){
   var allOptions = '';
@@ -102,10 +121,12 @@ var makeTable = function(json,tableName){
         prodAmount = ob.split(',')[0].split(':')[1];
 
         tableText += computeProdAmountText(prodName,prodAmount,obi);
+        calNutritionsVal(tableName,prodName,prodAmount,prodsInfo);
 
       });
       tableText +='</tbody>';
       $('.mainTableBody').replaceWith(tableText);
+      createMealSumTable(obi);
     }
   });
 
@@ -135,69 +156,33 @@ computeProdAmountText = function(prodName,prodAmount,obi){
   obi.mealIDs.push(JSON.stringify(idAutoIncrease - 2));
   obi.mealIDs.push(JSON.stringify(idAutoIncrease - 1));
 
-  // mealSumArr[j].IDs[idIndexs.i++] = idAutoIncrease - 2 ;
-  // mealSumArr[j].IDs[idIndexs.i++] = idAutoIncrease - 1 ;
-
   return text;
 }
 
 
 $(document).ready(function(){
 
-    prodsInfo = JSON.parse(sessionStorage.getItem('prodsInfo'));
-
-    // user_diet= JSON.parse(sessionStorage.getItem('meals'));
-    // console.log(user_diet);
+  q3 = "SELECT * FROM `tbl_diet_202`";
+  $.when( $.post('query.php',{query: q3},function(res){
+    var json;
+    if( res == "NULL" )
+    console.log('error occured');
+    else{
+      json = JSON.parse(res);
+      sessionStorage.setItem('allDiets',JSON.stringify(json));
+      diets = JSON.parse(sessionStorage.getItem('allDiets'));
+      prodsInfo = JSON.parse(sessionStorage.getItem('prodsInfo'));
+    }  
+  })
+  ).done(function(){
+    var optionss = createGeneralOptions(diets);
+    // console.log(optionss);
+    $('#choose-meal-option').append(optionss);
     
-    // createOptions(prodsInfo);
-    
-    var q3 = "SELECT * FROM `tbl_diet_202`";
-
-    $.post('query.php',{query: q3},function(res){
-      var json;
-      if( res == "NULL" )
-        console.log('error occured');
-      else{
-        json = JSON.parse(res);
-        sessionStorage.setItem('allDiets',JSON.stringify(json));
-        // var tableText ='';
-        var optionss = createGeneralOptions(json);
-
-        // console.log(optionss);
-        $('#choose-meal-option').append(optionss);
-        
-      //   $.each(json,function(i,obi){
-      //     var idIndexs = {i:0};
-      //     // console.log(obi);
-      //     prods = obi.prodes.split(',');
-
-          
-      //     $.each(prods,function(j,ob){
-      //       prodName = ob.split(',')[0].split(':')[0];
-      //       prodAmount = ob.split(',')[0].split(':')[1];
-  
-      //       // creating products/amount table
-            
-      //        tableText += computeProdAmountText(prodName,prodAmount,idIndexs);
-      //       // calculating meal nutrition vals
-      //       //calNutritionsVal(mealSumArr,j,prodName,prodAmount,prodsInfo);
-      //     })
-
-      //     // console.log(tableText);
-      //     // here need to post the table
-      //     currTable = '#table_' + JSON.stringify(i);
-          
-      //     $(currTable).append(tableText);
-
-      //     // mealSumArr[j].text += '</tbody>';
-                      
-      // })
-  
-      }  
-
     });
 
-})
+
+});
 
 $( "select" ).change(function() {
     var str = "";
@@ -210,12 +195,16 @@ $( "select" ).change(function() {
        
         $.each(diets,function(i,obi){
           obi["mealIDs"] = [];
+          obi["protein"] = 0;
+          obi["calories"] = 0;
+          obi["carbohydrat"] = 0;
           // console.log(obi);
         });
         makeTable(diets,$(this).text());
+        // calNutritionsVal($(this).text(),diets,prodsInfo);
         console.log(diets);
-      }
 
+      }
     });
   
   });
@@ -236,15 +225,13 @@ $( "select" ).change(function() {
         '</tr>'
     );
 
-    clearTable = '<tbody class="mainTableBody"></tbody>';
-    $('.mainTableBody').replaceWith(clearTable);
+    clearProdsTable = '<tbody class="mainTableBody"></tbody>';
+    $('.mainTableBody').replaceWith(clearProdsTable);
 
+    clearMealSumTable = '<tbody></tbody>';
+      $('.mealSumTalbe tbody').replaceWith(clearMealSumTable);
   });
 
-
-  // $('#saveBtnn').on("click",function(){
-  //   console.log($('#newMealInput').val());
-  // })
 
 $('#addRow').on("click",function(){
   rowText = prodAmountTextNewTable('',0);
@@ -274,9 +261,8 @@ $('#deleteBtn').on("click",function(){
       
         })).done(function(){
           alert("succeeded to delete!");
+          location.reload();
         })
-
-    
     }
 
   });  
@@ -339,9 +325,6 @@ $('#saveBtn').on('click',function(){
       "'" +
       ")";
      }
-    
-
-          console.log(q);
   
     $.when( $.post('query.php',{query: q},function(res){
       // var updatedJson;
@@ -349,7 +332,8 @@ $('#saveBtn').on('click',function(){
         console.log('error occured');
   
     })).done(function(){
-
+      alert("succeeded to create new diet!");
+      location.reload();
     })
   
 

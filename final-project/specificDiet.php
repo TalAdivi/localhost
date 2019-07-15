@@ -44,7 +44,7 @@
                         alt=""  class="icons"></a>
                     <a class="nav-link" href="#"><span>Create new user</span>
                         <img src="images/Person_Add_Icon_1.png" alt="picture" class="icons"></a>
-                    <a class="nav-link" href="#"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png"
+                    <a class="nav-link" href="./allDiets.php"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png"
                         alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>My workouts</span> <img src="images/Image_4.png"
                         alt="picture" class="icons"></a>
@@ -77,7 +77,7 @@
                         <table class="table table-bordered table-striped table-highlight"> 
                             <thead>
                                 <tr>
-                                <th> <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon">Products</th>
+                                <th>Products</th>
                                 <th>Amount (Grams)</th>
                                 </tr>
                             </thead>

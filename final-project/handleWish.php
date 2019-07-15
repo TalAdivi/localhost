@@ -78,41 +78,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr>
-                            <th scope="row">
-                                <div class="redDot"></div>
-                            </th>
-                            <td colspan="2"><a class="nameLink" href="#">Haim moshe</a></td>
-                            <td>Workout</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="redDot"></div>
-                            </th>
-                            <td colspan="2"><a class="nameLink" href="./specificWish.html">Zion Baruchi</a></td>
-                            <td>Diet</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="redDot"></div>
-                            </th>
-                            <td colspan="2"><a class="nameLink" href="#">Eran Zehavit</a></td>
-                            <td>Other</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="redDot"></div>
-                            </th>
-                            <td colspan="2"><a class="nameLink" href="#">Shimon falali</a></td>
-                            <td>Diet</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="redDot"></div>
-                            </th>
-                            <td colspan="2"><a class="nameLink" href="#">Haim Moshe</a></td>
-                            <td>Workout</td>
-                        </tr> -->
+                    
                     </tbody>
                 </table>
             </div>

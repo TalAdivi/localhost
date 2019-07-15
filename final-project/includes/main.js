@@ -6,12 +6,6 @@ $("button").on("click",function(curr){
 })
 
 
-
-
-
-
-
-
 // round progress bar logic
 $.fn.loading = function () {
   var DEFAULTS = {
@@ -81,87 +75,98 @@ $(document).ready(function(){
   if(currURL.match(/coucherHomePage/) != null)
   {
     var q = "SELECT * FROM `tbl_users_202`";
-
-    $.post('query.php',{query: q},function(res){
-      if( res == "NULL" )
-        console.log('error occured');
-      else{
-        var json = JSON.parse(res);
-        sessionStorage.setItem('users',JSON.stringify(json));
-  
-        
-        $.each(json,function(i,obj){
-          if(obj.newUser == 1)
-          {
-            $("#newUsers").append(
-              '<tr>'+
-              '<th scope="row" class="remove_top_border_th">'+
-                '<div class="orangeDot"></div>'+
-              '</th>'+
-              '<td colspan="3" class="remove_top_border_th"><a class="nameLink" href="#">'+
-              obj.name +
-              '</a></td>'+
-            '</tr>'
-            )
+    
+    $.when(
+      $.post('query.php',{query: q},function(res){
+        if( res == "NULL" )
+          alert('error occured');
+        else{
+          var json = JSON.parse(res);
+          sessionStorage.setItem('users',JSON.stringify(json));
+        }
+      })
+    ).done(function(){
+      users = JSON.parse(sessionStorage.getItem('users'));
+      $.each(users,function(i,obj){
+        if(obj.newUser == 1)
+        {
+          $("#newUsers").append(
+            '<tr>'+
+            '<th scope="row" class="remove_top_border_th">'+
+              '<div class="orangeDot"></div>'+
+            '</th>'+
+            '<td colspan="3" class="remove_top_border_th"><a class="nameLink" href="#">'+
+            obj.name +
+            '</a></td>'+
+          '</tr>'
+          )
+        }
+        else{
+          if(obj.wishes != null){
+          $('#usersWishes').append(
+            '<tr>' +
+            '<th scope="row">' +
+              '<div class="redDot"></div>' +
+            '</th>' +
+            '<td colspan="2"><a class="nameLink" href="#">'+
+            obj.name +
+            '</a></td>'+
+            '<td>'+
+              obj.wishes +
+              '</td>'+
+          '</tr>'
+          )
           }
-          else{
-            if(obj.wishes != null){
-            $('#usersWishes').append(
-              '<tr>' +
-              '<th scope="row">' +
-                '<div class="redDot"></div>' +
-              '</th>' +
-              '<td colspan="2"><a class="nameLink" href="#">'+
-              obj.name +
-              '</a></td>'+
-              '<td>'+
-                obj.wishes +
-                '</td>'+
-            '</tr>'
-            )
-            }
-          }
-        })
-        //console.log(JSON.parse(sessionStorage.getItem('users')));
-      }
+        }
+      })
     });
+
+
+
+
   }
 
 
   if(currURL.match(/handleWish/g) != null){
-    users = JSON.parse(sessionStorage.getItem('users'));
-    console.log(users);
-    $.each(users,function(i,obj){
-      if(obj.wishes != null){
-        $('#wishesTable tbody').append(
-          '<tr>'+
-          '<th scope="row">'+
-              '<div class="redDot"></div>'+
-          '</th>'+
-          '<td colspan="2"><a class="nameLink" href=specificWish.php?user_id='+
-          obj.user_id+
-          '>'+
-          obj.name +
-         ' </a></td>'+
-            '<td>'+
-            obj.wishes+
-            '</td>'+
-          '</tr>'
-        )
-      }
-    });
 
     var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
 
-    $.post('query.php',{query: q},function(res){
-      if( res == "NULL" )
-        console.log('error occured');
-      else{
-        json = JSON.parse(res);
-        sessionStorage.setItem('meals',JSON.stringify(json));
-      }  
-
+    $.when(
+      $.post('query.php',{query: q},function(res){
+        if( res == "NULL" )
+          console.log('error occured');
+        else{
+          json = JSON.parse(res);
+          sessionStorage.setItem('meals',JSON.stringify(json));
+        }  
+  
+      })
+    ).done(function(){
+      users = JSON.parse(sessionStorage.getItem('users'));
+      console.log(users);
+      $.each(users,function(i,obj){
+        if(obj.wishes != null){
+          $('#wishesTable tbody').append(
+            '<tr>'+
+            '<th scope="row">'+
+                '<div class="redDot"></div>'+
+            '</th>'+
+            '<td colspan="2"><a class="nameLink" href=specificWish.php?user_id='+
+            obj.user_id+
+            '>'+
+            obj.name +
+           ' </a></td>'+
+              '<td>'+
+              obj.wishes+
+              '</td>'+
+            '</tr>'
+          )
+        }
+      });
     });
+
+
+    
   }
 
   if(currURL.match(/specificDiet/g) != null){
@@ -179,9 +184,6 @@ $(document).ready(function(){
 
   }
 
-  if(currURL.match(/allDiets/g) != null){
-   
-    
-  }
+
 
 });
