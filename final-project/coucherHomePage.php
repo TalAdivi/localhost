@@ -63,101 +63,36 @@
       <!-- !/current page indicator -->
 
       <!--! Wish Table -->
-      <div id="wishesTable">
-        <div class="badge badge-pill badge-primary Wishes_title">Wishes</div>
-        <table class="table table-hover usersTable" id="circle_table">
-          <thead>
-            <tr>
-              <th scope="col" class="remove_top_border_th"></th>
-              <th scope="col" class="badge badge-pill badge-primary">Name</th>
-              <th scope="col" class="remove_top_border_th"></th>
-              <th scope="col" class="badge badge-pill badge-primary">subject</th>
-            </tr>
-          </thead>
-          <tbody id="usersWishes">
-          </tbody>
-        </table>
+
+      <div class="container">
+        <h2>Whishes Table </h2>
+        <ul class="responsive-table" id="wishesTable">
+
+          <li class="table-header">
+            <div class="col col-1">Name</div>
+            <div class="col col-3">wishes</div>
+          </li>
+
+        </ul>
       </div>
 
+      <!-- new user table -->
+      <div class="container">
+        <h2>New User Table </h2>
+        <ul class="responsive-table" id="newUserTable">
 
-              <!-- <tr>
-              <th scope="row">
-                <div class="redDot"></div>
-              </th>
-              <td colspan="2"><a class="nameLink" href="#">Haim moshe</a></td>
-              <td>Workout</td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="redDot"></div>
-              </th>
-              <td colspan="2"><a class="nameLink" href="./specificWish.html">Zion Baruchi</a></td>
-              <td>Diet</td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="redDot"></div>
-              </th>
-              <td colspan="2"><a class="nameLink" href="#">Eran Zehavit</a></td>
-              <td>Other</td>
-            </tr>
-            <tr>
-              <th scope="row"><img src="images/Image_9.png" alt="picture" class="icons tableIcon"></th>
-              <td colspan="3" class="see_more"><a href="./handleWish.html">See More</a></td>
-            </tr> -->
-
-          
-    <div class="container">
-      <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
-      <ul class="responsive-table">
-        <li class="table-header">
-          <div class="col col-1">Job Id</div>
-          <div class="col col-2">Customer Name</div>
-          <div class="col col-3">Amount Due</div>
-          <div class="col col-4">Payment Status</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1 redDot" data-label="Job Id"></div>
-          <div class="col col-2" data-label="Customer Name">John Doe</div>
-          <div class="col col-3" data-label="Amount">$350</div>
-          <div class="col col-4" data-label="Payment Status">Pending</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="Job Id">42442</div>
-          <div class="col col-2" data-label="Customer Name">Jennifer Smith</div>
-          <div class="col col-3" data-label="Amount">$220</div>
-          <div class="col col-4" data-label="Payment Status">Pending</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="Job Id">42257</div>
-          <div class="col col-2" data-label="Customer Name">John Smith</div>
-          <div class="col col-3" data-label="Amount">$341</div>
-          <div class="col col-4" data-label="Payment Status">Pending</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="Job Id">42311</div>
-          <div class="col col-2" data-label="Customer Name">John Carpenter</div>
-          <div class="col col-3" data-label="Amount">$115</div>
-          <div class="col col-4" data-label="Payment Status">Pending</div>
-        </li>
-      </ul>
-    </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <!--! /Wish Table -->
-
-
-      <!--! User Table -->
-
-      <div id="newUserTable">
-        <div class="badge badge-pill badge-primary Wishes_title">New Users</div>
-        <table class="table table-hover usersTable" id="circle_table_another">
-          <tbody id="newUsers">
-          </tbody>
-        </table>
+          <li class="table-header">
+            <div class="col col-1">Name</div>
+          </li>
+        </ul>
       </div>
-      <!--! /User Table -->
+
+      
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
       <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script> -->
@@ -167,4 +102,5 @@
     </div>
   </div>
 </body>
+
 </html>

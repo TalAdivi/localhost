@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="includes/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -20,7 +21,7 @@
         <a href="coucherHomePage.php" id="logoWidth">
             <div id="logo"></div>
         </a>
-        <div id="profile"><img src="./images/profilePic.png" alt="profilePic" ><a href="#">Log Out</a></div>
+        <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="#">Log Out</a></div>
         <!-- !/logo -->
         <!-- !search -->
         <div id="search">
@@ -34,18 +35,13 @@
         <div id="navBar">
             <div class="row">
                 <div class="nav nav-tabs nav-pills" id="nav-tab">
-                    <a class="nav-link " href="./coucherHomePage.php"> <img src="images/Home_Icon_2.png"
-                        alt="picture" class="icons"><span>Home</span></a>
-                    <a class="nav-link active " href="./handleWish.html"><span>Handle Wish</span> <img
-                            src="images/Image_9.png" alt="picture" class="icons"></a>
+                    <a class="nav-link " href="./coucherHomePage.php"><span>Home</span> <img src="images/Home_Icon_2.png" alt="picture" class="icons"></a>
+                    <a class="nav-link active " href="./handleWish.html"><span>Handle Wish</span> <img src="images/Image_9.png" alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>Create new user</span>
                         <img src="images/Person_Add_Icon_1.png" alt="picture" class="icons"></a>
-                    <a class="nav-link" href="#"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png"
-                        alt="picture"   class="icons"></a>
-                    <a class="nav-link" href="#"><span>My workouts</span> <img src="images/Image_4.png"
-                        alt="picture"  class="icons"></a>
-                    <a class="nav-link" href="#"><span>Account manager</span> <img src="images/Image_5.png "
-                        alt="picture"  class="icons"></a>
+                    <a class="nav-link" href="#"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png" alt="picture" class="icons"></a>
+                    <a class="nav-link" href="#"><span>My workouts</span> <img src="images/Image_4.png" alt="picture" class="icons"></a>
+                    <a class="nav-link" href="#"><span>Account manager</span> <img src="images/Image_5.png " alt="picture" class="icons"></a>
                 </div>
             </div>
         </div>
@@ -71,107 +67,36 @@
             <!-- !/notes -->
 
             <!-- !specific whishes table -->
-            <div class="myTable handleWish table-hover ">
-                <table class="table table-hover usersTable">
-                    <thead>
-                        <!-- <tr>
-                            <th colspan="4" scope="col" id="center">zion wishes</th>
+    
 
-                        </tr> -->
-                    </thead>
-                    <tbody>
-                        <!-- <tr>
-                            <th scope="row" class="remove_top_border_th">
-                                <div class="orangeDot"></div>
-                            </th>
-                            <td class="remove_top_border_th"><a class="nameLink" href="./specificDiet.html">First meal -
-                                    Banana</a></td>
-                            <td ></td>
-                            <td ></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="orangeDot"></div>
-                            </th>
-                            <td><a class="nameLink" href="./specificDiet.html">Second meal - Apple</a></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="orangeDot"></div>
-                            </th>
-                            <td colspan="2"><a class="nameLink" href="./specificDiet.html">Third meal - Eggs</a></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="orangeDot"></div>
-                            </th>
-                            <td colspan="3"><a class="nameLink" href="./specificDiet.html">Third meal - Bread</a></td>
-                        </tr> -->
-                    </tbody>
-                </table>
-                <!-- !specific whishes table -->
-                <!-- !progress bar badge -->
-                
-                <!-- <span class="badge badge-pill badge-primary goalBadge">Goal:<br>Loss 10KG</span>
-                    <div class="badge-middle">
-                    <span class="badge badge-pill badge-secondary">Duration:<br> 30days</span>
+                <div class="container">
+                    <h2> </h2>
+                    <ul class="responsive-table" id="newUserTable">
+
+                        <li class="table-header">
+                            <div class="col">Wish Name</div>
+                        </li>
+                    </ul>
                 </div>
-                    <span class="badge badge-pill badge-danger">Start:<br> 1/6/19</span>
-                    <span class="badge badge-pill badge-success">End:<br>1/6/19</span> -->
+                
 
-                <!-- !/progress bar badge -->
-
-                <!-- !progress bar -->
                 <div class="progress">
-                    <!-- <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" 
-                        style="width: 50%"></div><br> -->
-                        <!-- !/progress bar -->
-                    </div>
-                    <strong id="show-percent"> </strong>
+                </div>
+                <strong id="show-percent"> </strong>
                 <div>
                 </div>
-                <!-- !cnd jquery -->
-                <!-- <button class="btn btn-info" id="falseButton">Indeterminate</button>
-                <button class="btn btn-info" id="colorButton">Random Color</button> -->
-                <!-- !/cnd jquery -->
-                <!-- <div class="clear"></div> -->
-                <!--!user progress details  -->
-                <!-- <div class="container dietWorkoutCalendar">
-                    <div class="row">
-                        <div class="col-sm">
-                            <a href="./specificDiet.html" class="badge badge-pill badge-primary themeBadge"> <img
-                                    src="./images/Food_Apple_Icon_1Large.png" alt="picture">Diet</a>
-                        </div>
-                        <div class="col-sm">
-                            <a href="#" class="badge badge-pill badge-primary themeBadge"> <img
-                                    src="./images/Image_4Large.png" alt="picture">Workout</a>
-                        </div>
-                        <div class="col-sm">
-                            <a href="#" class="badge badge-pill badge-primary themeBadge"> <img
-                                    src="./images/Image_6Large.png" alt="picture">Calendar</a>
-                        </div>
-                    </div>
-                </div> -->
-                <!--!/user progress details  -->
+
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="includes/main.js"></script>
     <script src="includes/get_user_wish_details.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>

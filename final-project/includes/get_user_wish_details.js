@@ -32,30 +32,38 @@ $(document).ready(function(){
 
         //updating user wishes
 
-        $('.handleWish thead').append(
-         ' <tr>'+
-          '<th colspan="4" scope="col" id="center">'+
-            obj.name +
-            ' Whishes </th>' +
-      '</tr>'
+        $('.container h2').append(     
+            obj.name + ' Wishes'
         )
 
         currWish = obj.wishes.substring().split(',');
         $.each(currWish,function(i,wish){
-          $('.handleWish tbody').append(
-            '<tr>'+
-            '<th scope="row" class="remove_top_border_th">'+
-                '<div class="orangeDot"></div>'+
-            '</th>'+
-            '<td class="remove_top_border_th"><a class="nameLink" href="'+
-            './specificDiet.php?user_id='+
-            obj.user_id +
-            '">'+
-            wish +
-            '</a></td>' +
-            '<td ></td>' +
-            '<td ></td>' +
-            '</tr>'
+          $('#newUserTable').append(
+
+            '<li class="table-row">' +
+            '<a class="text-dark" href=./specificDiet.php?user_id='+
+             obj.user_id+
+             '>'+
+             '<div class="col" data-label="Name">' +
+             wish +
+             '</div>' +
+             '</a>'+
+           '</li>'
+
+
+            // '<tr>'+
+            // '<th scope="row" class="remove_top_border_th">'+
+            //     '<div class="orangeDot"></div>'+
+            // '</th>'+
+            // '<td class="remove_top_border_th"><a class="nameLink" href="'+
+            // './specificDiet.php?user_id='+
+            // obj.user_id +
+            // '">'+
+            // wish +
+            // '</a></td>' +
+            // '<td ></td>' +
+            // '<td ></td>' +
+            // '</tr>'
           )
         
         })

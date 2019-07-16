@@ -12,31 +12,143 @@ main, nav, article, aside, section, header, footer {
     display: block;
 }
 
-
 /* table test */
 
-body{font-family:lato,sans-serif}
-.container{max-width:1000px;margin-left:auto;margin-right:auto;padding-left:10px;padding-right:10px}
-h2{font-size:26px;margin:20px 0;text-align:center}
-small{font-size:.5em}
-li{border-radius:3px;padding:25px 30px;display:flex;justify-content:space-between;margin-bottom:25px}
-.table-header{background-color:#97ed82;font-size:14px;text-transform:uppercase;letter-spacing:.03em}
-.table-row{background-color:#fff;box-shadow:0 0 9px 0 rgba(0,0,0,.1)}
-.col-1{flex-basis:10%}
-.col-2{flex-basis:40%}
-.col-3,.col-4{flex-basis:25%}
-@media all and (max-width:767px){
-.table-header{display:none}
-li{display:block}
-.col{flex-basis:100%;display:flex;padding:10px 0}
-.col:before{color:#6C7A89;padding-right:10px;content:attr(data-label);flex-basis:50%;text-align:right}
+body {
+    font-family: lato, sans-serif
+}
+
+#coucherFlow .container {
+    width: 80% !important;
+    
+}
+
+#coucherFlow h2 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#coucherFlow small {
+    font-size: .5em
+}
+
+#coucherFlow #productsTable .table-header {
+    background-color: #42a5f5;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-weight: bold;
+}
+
+
+
+#coucherFlow li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px
+}
+
+#coucherFlow #saveBtn{  
+
+    float: right;
+}
+
+#coucherFlow #productsTable li{
+    padding: 25px 0px !important;
+    margin-bottom: 10px !important;
+}
+
+#coucherFlow #chooseMealTable li {
+    border-radius: 3px;
+    padding: unset !important;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px
+}
+
+#coucherFlow #chooseMealTable .btn-light{
+    width: 100%;
+}
+
+#coucherFlow #wishesTable .table-header  {
+    background-color: #97ed82;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-weight: bold;
+
+}
+
+#coucherFlow #newUserTable .table-header {
+    background-color: #ffde7e;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-weight: bold;
+
+}
+
+/* #coucherFlow #whiseProgress{
+
+} */
+
+#coucherFlow .table-row {
+    background-color: #fff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1)
+}
+
+#coucherFlow .col-1 {
+    flex-basis: 10%;
+    
+}
+
+#coucherFlow .col-2 {
+    flex-basis: 40%
+}
+
+#coucherFlow .col-3, .col-4 {
+    flex-basis: 25%
+}
+
+@media all and (max-width:767px) {
+    #coucherFlow .table-header {
+        display: none
+    }
+    #coucherFlow li {
+        display: block
+    }
+    #coucherFlow .col {
+        flex-basis: 100%;
+        display: flex;
+        padding: 10px 0
+    }
+    #coucherFlow .col:before {
+        color: #6C7A89;
+        /* padding-right: 10px; */
+        /* content: attr(data-label); */
+        flex-basis: 50%;
+        text-align: right
+    }
+
+    #coucherFlow #chooseMealTable .col:before {
+        color: #6C7A89;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: unset !important;
+        text-align: right
+    }
 }
 
 /* table test */
 
 /* login */
-#loginPage{
-    background:#62de8e;
+
+#loginPage {
+    background: #62de8e;
 }
 
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
@@ -50,7 +162,7 @@ li{display:block}
     margin: 0px auto;
 }
 
-.login-block .d-block.img-fluid{
+.login-block .d-block.img-fluid {
     margin: 0px auto;
     width: 85%;
 }
@@ -237,13 +349,13 @@ li{display:block}
     width: 923px;
 }
 
-#coucherFlow #newUserTable {
+/* #coucherFlow #newUserTable {
     margin-top: 70px;
     position: relative;
     float: left;
     width: 923px;
     height: 355px;
-}
+} */
 
 #coucherFlow .nav-link {
     width: 210px;
@@ -402,11 +514,11 @@ li{display:block}
 }
 
 #coucherFlow #wishesTable {
-    margin-top: 70px;
+    /* margin-top: 70px;
     position: relative;
     float: left;
     width: 923px;
-    height: 355px;
+    height: 355px; */
 }
 
 #coucherFlow #show-percent {
@@ -442,12 +554,12 @@ li{display:block}
     margin-left: 25px;
 }
 
-#coucherFlow .wishesTable td {
+/* #coucherFlow .wishesTable td {
     text-align: center;
-}
+} */
 
 #coucherFlow .progress {
-    margin-top: 35px;
+    margin-top: 100px;
 }
 
 #coucherFlow .progress-bar {
@@ -499,7 +611,7 @@ li{display:block}
 }
 
 #coucherFlow .chooseMeal {
-    width: 291px;
+    width: 360px;
     height: 268px;
     margin-top: 75px;
     float: left;
@@ -513,8 +625,8 @@ li{display:block}
 }
 
 #coucherFlow .mealSumTalbe {
-    width: 291px;
-    height: 268px;
+    width: 300px;
+    /* height: 268px; */
     margin-top: 20px;
     float: left;
     position: relative;
@@ -532,9 +644,17 @@ li{display:block}
     height: 268px;
     bottom: 130px;
     float: left;
-    position: relative;
+    position: inherit;
     display: block;
     clear: both;
+}
+
+#coucherFlow .mealSumTalbe .container{
+    width: 100% !important;
+}
+
+#coucherFlow .dailyMealSumTalbe .container{
+    width: 100% !important;
 }
 
 #coucherFlow .mealTable {
@@ -964,9 +1084,9 @@ li{display:block}
         width: 100% !important;
         margin-left: 0px !important;
     }
-    #coucherFlow #wishesTable {
+    /* #coucherFlow #wishesTable {
         width: 100% !important;
-    }
+    } */
     #coucherFlow .nav-link span {
         display: block;
         height: 71px;

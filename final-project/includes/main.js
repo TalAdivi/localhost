@@ -49,32 +49,32 @@ $(document).ready(function(){
       $.each(users,function(i,obj){
         if(obj.newUser == 1)
         {
-          $("#newUsers").append(
-            '<tr>'+
-            '<th scope="row" class="remove_top_border_th">'+
-              '<div class="orangeDot"></div>'+
-            '</th>'+
-            '<td colspan="3" class="remove_top_border_th"><a class="nameLink" href="#">'+
-            obj.name +
-            '</a></td>'+
-          '</tr>'
+          $("#newUserTable").append(
+           ' <li class="table-row">' +
+           ' <div class="col " data-label="Name">' +
+           obj.name +
+           '</div>' +
+          '</li>'
+
           )
         }
         else{
           if(obj.wishes != null){
-          $('#usersWishes').append(
-            '<tr>' +
-            '<th scope="row">' +
-              '<div class="redDot"></div>' +
-            '</th>' +
-            '<td colspan="2"><a class="nameLink" href="#">'+
+          $('#wishesTable').append(
+           '<li class="table-row">' +
+           '<a class="text-dark" href=./specificWish.php?user_id='+
+            obj.user_id+
+            '>'+
+            '<div class="col" data-label="Name">' +
             obj.name +
-            '</a></td>'+
-            '<td>'+
-              obj.wishes +
-              '</td>'+
-          '</tr>'
-          )
+            '</div>' +
+            '</a>'+
+            '<div class="col col-4" data-label="whishes">'+
+            obj.wishes +
+            '</div>'+
+          '</li>'
+     
+          )  
           }
         }
       })
@@ -115,21 +115,21 @@ $(document).ready(function(){
       console.log(users);
       $.each(users,function(i,obj){
         if(obj.wishes != null){
-          $('#wishesTable tbody').append(
-            '<tr>'+
-            '<th scope="row">'+
-                '<div class="redDot"></div>'+
-            '</th>'+
-            '<td colspan="2"><a class="nameLink" href=specificWish.php?user_id='+
-            obj.user_id+
-            '>'+
-            obj.name +
-           ' </a></td>'+
-              '<td>'+
-              obj.wishes+
-              '</td>'+
-            '</tr>'
-          )
+          $('#wishesTable').append(
+            '<li class="table-row">' +
+            '<a class="nameLink col-4" href=specificWish.php?user_id='+
+             obj.user_id+
+             '>'+
+             '<div class="col col-4" data-label="Name">' +
+             obj.name +
+             '</div>' +
+             '</a>'+
+             '<div class="col col-4" data-label="whishes">'+
+             obj.wishes +
+             '</div>'+
+           '</li>'
+      
+           )
         }
       });
     });

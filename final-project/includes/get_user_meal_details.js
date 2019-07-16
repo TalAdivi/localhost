@@ -60,20 +60,24 @@ function getUserId() {
 computeProdAmountText = function(mealSumArr,j,prodName,prodAmount,idIndexs){
   var options = createOptions(prodsInfo,prodName);
 
-  mealSumArr[j].text += '<tr>' + 
-  '<td>' + '<select class="options"' +
+  mealSumArr[j].text += '<li class="table-row">' +
+  '<div class="col" data-label="Name">'+
+   '<select class="options custom-select"' +
   'id=' +
   idAutoIncrease++ +
   '>' +   options +  '</select>' +
-  '<td>' + 
+  '</div>' +
+  '<div class="col col-4" data-label="whishes">'+
   '<input type="text" class="form-control "' +
     'id=' +
     idAutoIncrease++ +
    ' value=' +
     prodAmount + 
     '>' +
-  '</td>' +
-  '</tr>';
+   '</div>'+
+    '</li>';
+
+    console.log(mealSumArr[j].text);
 
     // to see witch IDs of each input are in the meal
     mealSumArr[j].IDs[idIndexs.i++] = idAutoIncrease - 2 ;
@@ -94,67 +98,134 @@ calNutritionsVal = function(mealSumArr,j,prodName,prodAmount,prodsInfo){
 }
 
 createMealSumTable = function(mealSumArr,j){
-$('.mealSumTalbe tbody').replaceWith(
-  '<tbody>'+
-  '<tr>' +
-  '<td><input type="text" class="form-control" value='+
+$('.mealSumTalbe .mainTableBody').replaceWith(
+'<div class="mainTableBody">'+
+  '<li class="table-row">' +
+  '<div class="col col-8" data-label="Name">'+
+  '<input type="text" class="form-control" value='+
   "Carbohydrat"+
   ' readonly="readonly">'+
-  '</td>'+
-  '<td><input type="text" class="form-control" value='+
+  '</div>' +
+  '<div class="col" data-label="whishes">'+
+  
+  '<input type="text" class="form-control" value='+
   mealSumArr[j].carbohydrat+
-  ' readonly="readonly">'+'</td>'+
-'</tr>'+
-'<tr>' +
-  '<td><input type="text" class="form-control" value='+
-  "Proteins"+
-  ' readonly="readonly">'+'</td>'+
-  '<td><input type="text" class="form-control" value='+
-  mealSumArr[j].protein+
-  ' readonly="readonly">'+'</td>'+
-'</tr>'+
-'<tr>' +
-  '<td><input type="text" class="form-control" value='+
-  "Calories"+
-  ' readonly="readonly">'+'</td>'+
-  '<td><input type="text" class="form-control" value='+
-  mealSumArr[j].calories+
-  ' readonly="readonly">'+'</td>'+
-'</tr>' +
-'</tbody>'
+  ' readonly="readonly">'+
+   '</div>'+
+    '</li>'+
+
+
+    '<li class="table-row">' +
+    '<div class="col col-8" data-label="Name">'+
+    '<input type="text" class="form-control" value='+
+    "Proteins"+
+    ' readonly="readonly">'+
+    '</div>' +
+    '<div class="col " data-label="whishes">'+
+    
+    '<input type="text" class="form-control" value='+
+    mealSumArr[j].protein+
+    ' readonly="readonly">'+
+     '</div>'+
+      '</li>'+
+
+      
+    '<li class="table-row">' +
+    '<div class="col col-8" data-label="Name">'+
+    '<input type="text" class="form-control" value='+
+    "Calories"+
+    ' readonly="readonly">'+
+    '</div>' +
+    '<div class="col " data-label="whishes">'+
+    
+    '<input type="text" class="form-control" value='+
+    mealSumArr[j].calories+
+    ' readonly="readonly">'+
+     '</div>'+
+      '</li>'+
+      '</div>'
+
 )
 }
 
 createDailyMealSumTable = function(totalCalories,totalCarbohydrat,totalProteins){
 
-  $('.dailyMealSumTalbe tbody').replaceWith(
-    '<tbody>' +
-    '<tr>' +
-    '<td><input type="text" class="form-control" value='+ 
-    "Carbohydrat" +
-    ' readonly="readonly">' +
-    '</td>'+
-    '<td><input type="text" class="form-control" value='+ 
-    totalCarbohydrat +
-    ' readonly="readonly">' +'</td>'+
-  '</tr>' +
-  '<tr>' +
-    '<td><input type="text" class="form-control" value='+ 
-    "Proteins" +
-    ' readonly="readonly">' +'</td>'+
-    '<td><input type="text" class="form-control" value='+ 
-    totalProteins +
-    ' readonly="readonly">' +'</td>'+
-  '</tr>' +
-  '<tr>' +
-    '<td><input type="text" class="form-control" value='+ 
-    "Calories" +
-    ' readonly="readonly" >' +'</td>'+
-    '<td><input type="text" class="form-control" value='+ 
-    totalCalories +
-    ' readonly="readonly">' +'</td>'+
-  '</tr>'+
-  '</tbody>'
+  $('.dailyMealSumTalbe .mainTableBody').replaceWith(
+
+    '<div class="mainTableBody">'+
+  '<li class="table-row">' +
+  '<div class="col col-8" data-label="Name">'+
+  '<input type="text" class="form-control" value='+
+  "Carbohydrat"+
+  ' readonly="readonly">'+
+  '</div>' +
+  '<div class="col" data-label="whishes">'+
+  
+  '<input type="text" class="form-control" value='+
+  totalCarbohydrat+
+  ' readonly="readonly">'+
+   '</div>'+
+    '</li>'+
+
+
+    '<li class="table-row">' +
+    '<div class="col col-8" data-label="Name">'+
+    '<input type="text" class="form-control" value='+
+    "Proteins"+
+    ' readonly="readonly">'+
+    '</div>' +
+    '<div class="col " data-label="whishes">'+
+    
+    '<input type="text" class="form-control" value='+
+    totalProteins+
+    ' readonly="readonly">'+
+     '</div>'+
+      '</li>'+
+
+      
+    '<li class="table-row">' +
+    '<div class="col col-8" data-label="Name">'+
+    '<input type="text" class="form-control" value='+
+    "Calories"+
+    ' readonly="readonly">'+
+    '</div>' +
+    '<div class="col " data-label="whishes">'+
+    
+    '<input type="text" class="form-control" value='+
+    totalCalories+
+    ' readonly="readonly">'+
+     '</div>'+
+      '</li>'+
+      '</div>'
+
+
+  //   '<tbody>' +
+  //   '<tr>' +
+  //   '<td><input type="text" class="form-control" value='+ 
+  //   "Carbohydrat" +
+  //   ' readonly="readonly">' +
+  //   '</td>'+
+  //   '<td><input type="text" class="form-control" value='+ 
+  //   totalCarbohydrat +
+  //   ' readonly="readonly">' +'</td>'+
+  // '</tr>' +
+  // '<tr>' +
+  //   '<td><input type="text" class="form-control" value='+ 
+  //   "Proteins" +
+  //   ' readonly="readonly">' +'</td>'+
+  //   '<td><input type="text" class="form-control" value='+ 
+  //   totalProteins +
+  //   ' readonly="readonly">' +'</td>'+
+  // '</tr>' +
+  // '<tr>' +
+  //   '<td><input type="text" class="form-control" value='+ 
+  //   "Calories" +
+  //   ' readonly="readonly" >' +'</td>'+
+  //   '<td><input type="text" class="form-control" value='+ 
+  //   totalCalories +
+  //   ' readonly="readonly">' +'</td>'+
+  // '</tr>'+
+  // '</tbody>'
   )
 }
 
@@ -198,7 +269,7 @@ $(document).ready(function(){
         dietID = 0;
         IDs = [];
   
-        constructor(text = '<tbody class="mainTableBody">'){
+        constructor(text = '<div class="mainTableBody">'){
           this.text = text;
         }
       }
@@ -234,7 +305,7 @@ $(document).ready(function(){
                 // calculating meal nutrition vals
                 calNutritionsVal(mealSumArr,j,prodName,prodAmount,prodsInfo);
               })
-              mealSumArr[j].text += '</tbody>';
+              mealSumArr[j].text += '</div>';
             }
           }  
         }    
@@ -259,7 +330,7 @@ $(document).ready(function(){
   $('button').on('click', function () {
    
    if($(this).html().match(/First/g) != null){ 
-    $('.mainTableBody').replaceWith(mealSumArr[0].text); 
+    $('.mealTable .mainTableBody').replaceWith(mealSumArr[0].text); 
     createMealSumTable(mealSumArr,0);
     
     currentMeal = 0;
@@ -269,7 +340,7 @@ $(document).ready(function(){
    }
   
    if($(this).html().match(/Second/g) != null){
-    $('.mainTableBody').replaceWith(mealSumArr[1].text); 
+    $('.mealTable .mainTableBody').replaceWith(mealSumArr[1].text); 
     createMealSumTable(mealSumArr,1); 
     console.log(mealSumArr[1].IDs);
     console.log(mealSumArr[1].dietID);
@@ -277,7 +348,7 @@ $(document).ready(function(){
    }
   
    if($(this).html().match(/Third/g) != null){
-    $('.mainTableBody').replaceWith(mealSumArr[2].text);  
+    $('.mealTable .mainTableBody').replaceWith(mealSumArr[2].text);  
     createMealSumTable(mealSumArr,2);
     console.log(mealSumArr[2].IDs);
     console.log(mealSumArr[2].dietID);
@@ -316,7 +387,7 @@ $(document).ready(function(){
     })).done(function(){
       var q = "SELECT * FROM `tbl_user-diet_202` AS u INNER JOIN `tbl_diet_202` AS p ON p.diet_id = u.diet_id";
   
-      $.post('query.php',{query: q},function(res){
+      $.when($.post('query.php',{query: q},function(res){
         var json;
         if( res == "NULL" )
           console.log('error occured');
@@ -326,6 +397,8 @@ $(document).ready(function(){
           sessionStorage.setItem('meals',JSON.stringify(json));
         }  
   
+      })).done(function(){
+        alert("Menu updated!");
       });
     });
   });
