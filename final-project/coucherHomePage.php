@@ -1,7 +1,3 @@
-<?php
-// session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,8 +67,6 @@
 
       <!--! Wish Table -->
       <div id="wishesTable">
-
-
         <div class="badge badge-pill badge-primary Wishes_title">Wishes</div>
         <table class="table table-hover usersTable" id="circle_table">
           <thead>
@@ -84,7 +78,12 @@
             </tr>
           </thead>
           <tbody id="usersWishes">
-            <!-- <tr>
+          </tbody>
+        </table>
+      </div>
+
+
+              <!-- <tr>
               <th scope="row">
                 <div class="redDot"></div>
               </th>
@@ -109,12 +108,48 @@
               <th scope="row"><img src="images/Image_9.png" alt="picture" class="icons tableIcon"></th>
               <td colspan="3" class="see_more"><a href="./handleWish.html">See More</a></td>
             </tr> -->
-          </tbody>
-        </table>
-      </div>
+
+          
+    <div class="container">
+      <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class="col col-1">Job Id</div>
+          <div class="col col-2">Customer Name</div>
+          <div class="col col-3">Amount Due</div>
+          <div class="col col-4">Payment Status</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1 redDot" data-label="Job Id"></div>
+          <div class="col col-2" data-label="Customer Name">John Doe</div>
+          <div class="col col-3" data-label="Amount">$350</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="Job Id">42442</div>
+          <div class="col col-2" data-label="Customer Name">Jennifer Smith</div>
+          <div class="col col-3" data-label="Amount">$220</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="Job Id">42257</div>
+          <div class="col col-2" data-label="Customer Name">John Smith</div>
+          <div class="col col-3" data-label="Amount">$341</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="Job Id">42311</div>
+          <div class="col col-2" data-label="Customer Name">John Carpenter</div>
+          <div class="col col-3" data-label="Amount">$115</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+      </ul>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <!--! /Wish Table -->
 
-      <!-- <div class="clear"></div> -->
 
       <!--! User Table -->
 
@@ -122,29 +157,6 @@
         <div class="badge badge-pill badge-primary Wishes_title">New Users</div>
         <table class="table table-hover usersTable" id="circle_table_another">
           <tbody id="newUsers">
-            <!-- <tr>
-              <th scope="row" class="remove_top_border_th">
-                <div class="orangeDot"></div>
-              </th>
-              <td colspan="3" class="remove_top_border_th"><a class="nameLink" href="#">Alon Mizrhit</a></td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="orangeDot"></div>
-              </th>
-              <td colspan="3"><a class="nameLink" href="#">Gal Gadot</a></td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <div class="orangeDot"></div>
-              </th>
-              <td colspan="3"><a class="nameLink" href="#">Assi Cohen</a></td>
-
-            </tr>
-            <tr>
-              <th scope="row"><img src="images/Person_Add_Icon_1.png" alt="picture" class="icons tableIcon"></th>
-              <td colspan="3" class="see_more"><a href="#">See More</a></td>
-            </tr> -->
           </tbody>
         </table>
       </div>
@@ -158,5 +170,4 @@
     </div>
   </div>
 </body>
-
 </html>

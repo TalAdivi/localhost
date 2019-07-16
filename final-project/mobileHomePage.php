@@ -14,9 +14,8 @@
 <body id="userFlow">
   <div id="mainWrapper">
 
-  
   <!-- *hey user name -->
-  <div class="alert alert-success hey-user-name" role="banner">Hey "username"</div>
+  <div class="alert alert-success hey-user-name" role="banner"></div>
   <!-- */hey user name -->
 
   <!--*logo  -->
@@ -33,7 +32,7 @@
   </div>
   <div class="text-center">
 
-    <div class="progress-bar" data-percent="60" data-duration="1000" data-color="#ccc,black"></div>
+    <div class="progress-bar" id='updatePercent' data-percent="0" data-duration="1000" data-color="#ccc,black"></div>
     <div class="text-center profile-pic">
       <img src="./images/guyProfile1.png" class="rounded" alt="user-pic">
       <p class="show-percent"></p>
@@ -54,7 +53,9 @@
     <div class="alert alert-success next-meal-sum">
       <section class="next-meal"><strong>Next Meal:</strong><br>Thired Meal</section>
       <section class="meal-at"><strong>At:</strong> <br>17:30</section>
+        <a id='mealLink' href="">
       <img src="./images/Food_Apple_Icon_Med.png" alt="Apple Icon" class="home-icons">
+    </a>
     </div>
 
     <div class="alert alert-success next-workout">
