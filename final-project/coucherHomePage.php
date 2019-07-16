@@ -17,10 +17,10 @@
 <body id="coucherFlow">
   <div id="mainWrapper">
     <!-- !logo -->
-    <a href="index.php" id="logoWidth">
+    <a href="./coucherHomePage.php" id="logoWidth">
       <div id="logo"></div>
     </a>
-    <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="#">Log Out</a></div>
+    <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="./index.php">Log Out</a></div>
     <!-- !/logo -->
     <!-- !search -->
     <div id="search">
@@ -36,11 +36,11 @@
     <div id="navBar">
       <div class="row justify-content-md-center">
         <div class="nav nav-tabs nav-pills" id="nav-tab">
-          <a class="nav-link active" href="./index.php"><span>Home</span> <img src="images/Home_Icon_2.png" alt="picture" class="icons"></a>
+          <a class="nav-link active" href="./coucherHomePage.php"><span>Home</span> <img src="images/Home_Icon_2.png" alt="picture" class="icons"></a>
           <a class="nav-link " href="./handleWish.php"><span>Handle Wish</span> <img src="images/Image_9.png" alt="picture" class="icons"></a>
           <a class="nav-link" href="#"><span>Create new user</span>
             <img src="images/Person_Add_Icon_1.png" alt="picture" class="icons"></a>
-          <a class="nav-link" href="#"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png" alt="picture" class="icons"></a>
+          <a class="nav-link" href="./allDiets.php"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png" alt="picture" class="icons"></a>
           <a class="nav-link" href="#"><span>My workouts</span> <img src="images/Image_4.png" alt="picture" class="icons"></a>
           <a class="nav-link" href="#"><span>Account manager</span> <img src="images/Image_5.png " alt="picture" class="icons"></a>
         </div>
@@ -57,9 +57,7 @@
       <!-- !/breadCrumb -->
 
       <!-- !current page indicator -->
-      <div class="alert alert-primary" id="currPageTitle" role="alert">
-        <h1>Home Page </h1>
-      </div>
+      
       <!-- !/current page indicator -->
 
       <!--! Wish Table -->

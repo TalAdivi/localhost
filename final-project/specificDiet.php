@@ -18,7 +18,7 @@
         <a href="coucherHomePage.php" id="logoWidth">
             <div id="logo"></div>
         </a>
-        <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="#">Log Out</a></div>
+        <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="./index.php">Log Out</a></div>
         <!-- !/logo -->
 
         <!-- !search -->
@@ -97,7 +97,7 @@
 
                     <div class="container">
                         <h2>Menu </h2>
-                        <ul class="responsive-table" id="productsTable">
+                        <ul class="responsive-table productsTable">
 
                             <li class="table-header">
                                 <div class="col col-1">Products</div>
@@ -120,7 +120,7 @@
 
                 <div class="container">
                         <h2>Meal Sum</h2>
-                        <ul class="responsive-table" id="productsTable">
+                        <ul class="responsive-table productsTable">
 
                             <li class="table-header">
                                 <div class="col">Nutritional Values</div>
@@ -142,7 +142,7 @@
 
                 <div class="container">
                         <h2>Daily Meal Sum</h2>
-                        <ul class="responsive-table" id="productsTable">
+                        <ul class="responsive-table productsTable">
 
                             <li class="table-header">
                                 <div class="col">Nutritional Values</div>

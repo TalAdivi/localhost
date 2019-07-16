@@ -18,16 +18,13 @@
         <a href="coucherHomePage.php" id="logoWidth">
             <div id="logo"></div>
         </a>
-        <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="#">Log Out</a></div>
+        <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="./index.php">Log Out</a></div>
         <!-- !/logo -->
 
         <!-- !search -->
         <div id="search">
             <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <button class="btn searchBtn" type="button" id="button-addon1"><img src="./images/Search_Icon_1.png" alt="search icon" class="searchIcon"></button>
-                </div>
-                <tr type="text" class="form-control" placeholder="">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
             </div>
         </div>
         <!-- !/search -->
@@ -39,10 +36,10 @@
             <div class="row">
                 <div class="nav nav-tabs nav-pills" id="nav-tab">
                     <a class="nav-link " href="./coucherHomePage.php"><span>Home</span> <img src="images/Home_Icon_2.png" alt="" class="icons"></a>
-                    <a class="nav-link active" href="./handleWish.html"><span>Handle Wish</span> <img src="images/Image_9.png" alt="" class="icons"></a>
+                    <a class="nav-link" href="./handleWish.html"><span>Handle Wish</span> <img src="images/Image_9.png" alt="" class="icons"></a>
                     <a class="nav-link" href="#"><span>Create new user</span>
                         <img src="images/Person_Add_Icon_1.png" alt="picture" class="icons"></a>
-                    <a class="nav-link" href="#"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png" alt="picture" class="icons"></a>
+                    <a class="nav-link active" href="#"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png" alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>My workouts</span> <img src="images/Image_4.png" alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>Account manager</span> <img src="images/Image_5.png " alt="picture" class="icons"></a>
                 </div>
@@ -67,7 +64,7 @@
 
                 <div class="container">
                         <h2>Menu </h2>
-                        <ul class="responsive-table" id="productsTable">
+                        <ul class="responsive-table productsTable">
 
                             <li class="table-header">
                                 <div class="col col-1"><img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addRow'>Products</div>
@@ -107,7 +104,7 @@
 
                     <div class="container">
                         <h2>Choose Meal </h2>
-                        <ul class="responsive-table" id="productsTable">
+                        <ul class="responsive-table productsTable">
 
                             <li class="table-header">
 
@@ -151,7 +148,7 @@
                 <div class="mealSumTalbe">
                     <div class="container">
                         <h2>Meal Sum</h2>
-                        <ul class="responsive-table" id="productsTable">
+                        <ul class="responsive-table productsTable">
 
                             <li class="table-header">
                                 <div class="col">Nutritional Values</div>

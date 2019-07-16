@@ -34,7 +34,7 @@ body {
     font-size: .5em
 }
 
-#coucherFlow #productsTable .table-header {
+#coucherFlow .productsTable .table-header {
     background-color: #42a5f5;
     font-size: 14px;
     text-transform: uppercase;
@@ -57,7 +57,7 @@ body {
     float: right;
 }
 
-#coucherFlow #productsTable li{
+#coucherFlow .productsTable li{
     padding: 25px 0px !important;
     margin-bottom: 10px !important;
 }
@@ -1221,5 +1221,19 @@ body {
 #coucherFlow .DeletemoveDown{
     margin-top: 0px !important;
 }
+
+
+.form-control{
+    padding: none !important;
+}
+
+#coucherFlow .breadcrumb{
+    background-color: transparent !important;
+}
+
+#coucherFlow .breadcrumb li{
+    padding: 1px 1px !important;
+}
+
 
 /* /Media Querys */

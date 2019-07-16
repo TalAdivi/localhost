@@ -19,7 +19,7 @@
   <!-- */hey user name -->
 
   <!--*logo  -->
-  <a href="index.html">
+  <a href="./coucherHomePage.php">
     <div class="container" id="logo"></div>
   </a>
   <!--*/logo  -->

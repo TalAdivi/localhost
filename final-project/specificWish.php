@@ -21,7 +21,7 @@
         <a href="coucherHomePage.php" id="logoWidth">
             <div id="logo"></div>
         </a>
-        <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="#">Log Out</a></div>
+        <div id="profile"><img src="./images/profilePic.png" alt="profilePic"><a href="./index.php">Log Out</a></div>
         <!-- !/logo -->
         <!-- !search -->
         <div id="search">
@@ -39,7 +39,7 @@
                     <a class="nav-link active " href="./handleWish.html"><span>Handle Wish</span> <img src="images/Image_9.png" alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>Create new user</span>
                         <img src="images/Person_Add_Icon_1.png" alt="picture" class="icons"></a>
-                    <a class="nav-link" href="#"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png" alt="picture" class="icons"></a>
+                    <a class="nav-link" href="./allDiets.php"><span>My diets</span> <img src="images/Food_Apple_Icon_1.png" alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>My workouts</span> <img src="images/Image_4.png" alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>Account manager</span> <img src="images/Image_5.png " alt="picture" class="icons"></a>
                 </div>
@@ -49,7 +49,7 @@
         <div id="middleWrapper">
             <!-- !breadCrumb -->
             <nav aria-label="breadcrumb">
-                <ol>
+                <ol class= "breadcrumb lessPadding">
 
                 </ol>
             </nav>
@@ -73,9 +73,7 @@
                     <h2> </h2>
                     <ul class="responsive-table" id="newUserTable">
 
-                        <li class="table-header">
-                            <div class="col">Wish Name</div>
-                        </li>
+                        
                     </ul>
                 </div>
                 
