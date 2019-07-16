@@ -4,34 +4,85 @@ var newDietIDs = [];
 var diets;
 
 var createMealSumTable = function(currDiet){
-  $('.mealSumTalbe tbody').replaceWith(
-    '<tbody>'+
-    '<tr>' +
-    '<td><input type="text" class="form-control" value='+
+  $('.mealSumTalbe .mainTableBody').replaceWith(
+
+    '<div class="mainTableBody">'+
+    '<li class="table-row">' +
+    '<div class="col col-8" data-label="Name">'+
+    '<input type="text" class="form-control" value='+
     "Carbohydrat"+
     ' readonly="readonly">'+
-    '</td>'+
-    '<td><input type="text" class="form-control" value='+
+    '</div>' +
+    '<div class="col" data-label="whishes">'+
+    
+    '<input type="text" class="form-control" value='+
     currDiet.carbohydrat+
-    ' readonly="readonly">'+'</td>'+
-  '</tr>'+
-  '<tr>' +
-    '<td><input type="text" class="form-control" value='+
-    "Proteins"+
-    ' readonly="readonly">'+'</td>'+
-    '<td><input type="text" class="form-control" value='+
-    currDiet.protein+
-    ' readonly="readonly">'+'</td>'+
-  '</tr>'+
-  '<tr>' +
-    '<td><input type="text" class="form-control" value='+
-    "Calories"+
-    ' readonly="readonly">'+'</td>'+
-    '<td><input type="text" class="form-control" value='+
-    currDiet.calories+
-    ' readonly="readonly">'+'</td>'+
-  '</tr>' +
-  '</tbody>'
+    ' readonly="readonly">'+
+     '</div>'+
+      '</li>'+
+  
+  
+      '<li class="table-row">' +
+      '<div class="col col-8" data-label="Name">'+
+      '<input type="text" class="form-control" value='+
+      "Proteins"+
+      ' readonly="readonly">'+
+      '</div>' +
+      '<div class="col " data-label="whishes">'+
+      
+      '<input type="text" class="form-control" value='+
+      currDiet.protein+
+      ' readonly="readonly">'+
+       '</div>'+
+        '</li>'+
+  
+        
+      '<li class="table-row">' +
+      '<div class="col col-8" data-label="Name">'+
+      '<input type="text" class="form-control" value='+
+      "Calories"+
+      ' readonly="readonly">'+
+      '</div>' +
+      '<div class="col " data-label="whishes">'+
+      
+      '<input type="text" class="form-control" value='+
+      currDiet.calories+
+      ' readonly="readonly">'+
+       '</div>'+
+        '</li>'+
+        '</div>'
+
+
+
+
+
+  //   '<tbody>'+
+  //   '<tr>' +
+  //   '<td><input type="text" class="form-control" value='+
+  //   "Carbohydrat"+
+  //   ' readonly="readonly">'+
+  //   '</td>'+
+  //   '<td><input type="text" class="form-control" value='+
+  //   currDiet.carbohydrat+
+  //   ' readonly="readonly">'+'</td>'+
+  // '</tr>'+
+  // '<tr>' +
+  //   '<td><input type="text" class="form-control" value='+
+  //   "Proteins"+
+  //   ' readonly="readonly">'+'</td>'+
+  //   '<td><input type="text" class="form-control" value='+
+  //   currDiet.protein+
+  //   ' readonly="readonly">'+'</td>'+
+  // '</tr>'+
+  // '<tr>' +
+  //   '<td><input type="text" class="form-control" value='+
+  //   "Calories"+
+  //   ' readonly="readonly">'+'</td>'+
+  //   '<td><input type="text" class="form-control" value='+
+  //   currDiet.calories+
+  //   ' readonly="readonly">'+'</td>'+
+  // '</tr>' +
+  // '</tbody>'
   )
 }
 
@@ -55,20 +106,40 @@ var calNutritionsVal = function(tableName,prodName,prodAmount,prodsInfo){
 var prodAmountTextNewTable = function (prodName,prodAmount) { 
   var options = createOptions(prodsInfo,prodName);
   var text = '';
-  text = '<tr>' + 
-  '<td>' + '<select class="options"' +
+
+
+
+  text = '<li class="table-row">' +
+  '<div class="col" data-label="Name">'+
+   '<select class="options custom-select"' +
   'id=' +
   idAutoIncrease++ +
   '>' +   options +  '</select>' +
-  '<td>' + 
+  '</div>' +
+  '<div class="col col-4" data-label="whishes">'+
   '<input type="text" class="form-control "' +
     'id=' +
     idAutoIncrease++ +
    ' value=' +
     prodAmount + 
     '>' +
-  '</td>' +
-  '</tr>';
+   '</div>'+
+    '</li>';
+
+  // text = '<tr>' + 
+  // '<td>' + '<select class="options custom-select"' +
+  // 'id=' +
+  // idAutoIncrease++ +
+  // '>' +   options +  '</select>' +
+  // '<td>' + 
+  // '<input type="text" class="form-control "' +
+  //   'id=' +
+  //   idAutoIncrease++ +
+  //  ' value=' +
+  //   prodAmount + 
+  //   '>' +
+  // '</td>' +
+  // '</tr>';
 
   newDietIDs.push(idAutoIncrease-2);
   newDietIDs.push(idAutoIncrease-1);
@@ -109,7 +180,7 @@ var createOptions = function(Json,selected){
 }
 
 var makeTable = function(json,tableName){
-  tableText = '<tbody class="mainTableBody">';
+  tableText = '<div class="mainTableBody">';
   $.each(json,function(i,obi){
 
     if(obi.name == tableName){
@@ -124,8 +195,8 @@ var makeTable = function(json,tableName){
         calNutritionsVal(tableName,prodName,prodAmount,prodsInfo);
 
       });
-      tableText +='</tbody>';
-      $('.mainTableBody').replaceWith(tableText);
+      tableText +='</div>';
+      $('.mealTable .mainTableBody').replaceWith(tableText);
       createMealSumTable(obi);
     }
   });
@@ -138,20 +209,39 @@ computeProdAmountText = function(prodName,prodAmount,obi){
   var text = '';
 
 
-  text = '<tr>' + 
-  '<td>' + '<select class="options"' +
+  // text = '<tr>' + 
+  // '<td>' + '<select class="options custom-select"' +
+  // 'id=' +
+  // idAutoIncrease++ +
+  // '>' +   options +  '</select>' +
+  // '<td>' + 
+  // '<input type="text" class="form-control "' +
+  //   'id=' +
+  //   idAutoIncrease++ +
+  //  ' value=' +
+  //   prodAmount + 
+  //   '>' +
+  // '</td>' +
+  // '</tr>';
+
+
+  text += '<li class="table-row">' +
+  '<div class="col" data-label="Name">'+
+   '<select class="options custom-select"' +
   'id=' +
   idAutoIncrease++ +
   '>' +   options +  '</select>' +
-  '<td>' + 
+  '</div>' +
+  '<div class="col col-4" data-label="whishes">'+
   '<input type="text" class="form-control "' +
     'id=' +
     idAutoIncrease++ +
    ' value=' +
     prodAmount + 
     '>' +
-  '</td>' +
-  '</tr>';
+   '</div>'+
+    '</li>';
+
 
   obi.mealIDs.push(JSON.stringify(idAutoIncrease - 2));
   obi.mealIDs.push(JSON.stringify(idAutoIncrease - 1));
@@ -181,7 +271,12 @@ $(document).ready(function(){
     
     });
 
-
+    $( "input" ).keyup(function() {
+      console.log('111');
+      var value = $(this).val();  
+      $(this).val(value);
+      console.log($(this).val());
+    });
 });
 
 $( "select" ).change(function() {
@@ -212,31 +307,36 @@ $( "select" ).change(function() {
   $( "input" ).keyup(function() {
     var value = $(this).val();  
     $(this).val(value);
-    console.log($(this).val());
-  })
+    console.log('111');
+  });
 
   $('#addMealName').on("click",function(){
 
-    $('.chooseMeal .table.table-bordered.table-highlight tbody').append(
-      '<tr>' +
-        '<td>' + 
-        '<input type="text" class="form-control" value="" placeholder="enter diet name" id="newMealInput"></input>' +
-        '</td>' +
-        '</tr>'
+    $('.chooseMeal ul').append(
+      // '<tr>' +
+      //   '<td>' + 
+      //   '<input type="text" class="form-control" value="" placeholder="enter diet name" id="newMealInput"></input>' +
+      //   '</td>' +
+      //   '</tr>'
+      // '<li class="table-row">'+
+      '<div class="col">'+
+      '<input type="text" class="form-control" value="" placeholder="enter diet name" id="newMealInput"></input>'+
+      '</div>'
+      // '</li>'
     );
 
-    clearProdsTable = '<tbody class="mainTableBody"></tbody>';
+    clearProdsTable = '<div class="mainTableBody"></div>';
     $('.mainTableBody').replaceWith(clearProdsTable);
 
-    clearMealSumTable = '<tbody></tbody>';
-      $('.mealSumTalbe tbody').replaceWith(clearMealSumTable);
+    clearMealSumTable = '<div></div>';
+      $('.mealSumTalbe div').replaceWith(clearMealSumTable);
   });
 
 
 $('#addRow').on("click",function(){
   rowText = prodAmountTextNewTable('',0);
   
-  $('.mainTableBody').append(rowText);
+  $('.mealTable .mainTableBody').append(rowText);
 })
 
 $('#deleteBtn').on("click",function(){
@@ -279,9 +379,11 @@ $('#saveBtn').on('click',function(){
       if($(this).attr('class') == 'generalOption'){
 
         tableName = $(this).text();
+        // console.log(tableName);
         $.each(diets,function(i,obi){
           if(obi.name == tableName ){
             updatedText = obi.prodes;
+            console.log(updatedText);
           }
         });
         updatedText += ',';    
@@ -298,8 +400,10 @@ $('#saveBtn').on('click',function(){
         if(parseInt(obi)% 2){
           // console.log(obi);
           updatedText +=  $(currID).val() +',';
+          // console.log( $(currID).val());
         }else{
           updatedText +=  $(currID).val() + ':';
+          // console.log( $(currID).val());
         }
      })
      updatedText = updatedText.slice(0,-1);

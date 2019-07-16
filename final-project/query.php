@@ -17,9 +17,13 @@
         echo "NULL";
     }
     else{
-        $res = mysqli_fetch_all($model,MYSQLI_ASSOC);
-        $res = json_encode($res);
-        echo $res;
+        
+        $resArray = [];
+        while ($row = mysqli_fetch_assoc($model)) {
+            $resArray[] = $row;
+        }
+        $rows = json_encode($resArray);
+        echo $rows;
     }
     mysqli_close($connection);
 ?>
