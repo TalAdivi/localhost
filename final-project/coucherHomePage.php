@@ -81,6 +81,73 @@
           </tbody>
         </table>
       </div>
+
+
+              <!-- <tr>
+              <th scope="row">
+                <div class="redDot"></div>
+              </th>
+              <td colspan="2"><a class="nameLink" href="#">Haim moshe</a></td>
+              <td>Workout</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="redDot"></div>
+              </th>
+              <td colspan="2"><a class="nameLink" href="./specificWish.html">Zion Baruchi</a></td>
+              <td>Diet</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="redDot"></div>
+              </th>
+              <td colspan="2"><a class="nameLink" href="#">Eran Zehavit</a></td>
+              <td>Other</td>
+            </tr>
+            <tr>
+              <th scope="row"><img src="images/Image_9.png" alt="picture" class="icons tableIcon"></th>
+              <td colspan="3" class="see_more"><a href="./handleWish.html">See More</a></td>
+            </tr> -->
+
+          
+    <div class="container">
+      <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class="col col-1">Job Id</div>
+          <div class="col col-2">Customer Name</div>
+          <div class="col col-3">Amount Due</div>
+          <div class="col col-4">Payment Status</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1 redDot" data-label="Job Id"></div>
+          <div class="col col-2" data-label="Customer Name">John Doe</div>
+          <div class="col col-3" data-label="Amount">$350</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="Job Id">42442</div>
+          <div class="col col-2" data-label="Customer Name">Jennifer Smith</div>
+          <div class="col col-3" data-label="Amount">$220</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="Job Id">42257</div>
+          <div class="col col-2" data-label="Customer Name">John Smith</div>
+          <div class="col col-3" data-label="Amount">$341</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="Job Id">42311</div>
+          <div class="col col-2" data-label="Customer Name">John Carpenter</div>
+          <div class="col col-3" data-label="Amount">$115</div>
+          <div class="col col-4" data-label="Payment Status">Pending</div>
+        </li>
+      </ul>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <!--! /Wish Table -->
 
 
