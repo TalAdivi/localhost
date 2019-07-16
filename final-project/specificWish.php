@@ -8,8 +8,9 @@
     <title> Wish</title>
     <link rel="stylesheet" href="includes/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body id="coucherFlow">
@@ -24,11 +25,7 @@
         <!-- !search -->
         <div id="search">
             <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <button class="btn searchBtn" type="button" id="button-addon1"><img src="./images/Search_Icon_1.png" alt="search icon"
-                            class="searchIcon"></button>
-                </div>
-                <input type="text" class="form-control" placeholder="">
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
             </div>
         </div>
         <!-- !/search -->
@@ -37,8 +34,8 @@
         <div id="navBar">
             <div class="row">
                 <div class="nav nav-tabs nav-pills" id="nav-tab">
-                    <a class="nav-link " href="./coucherHomePage.php"><span>Home</span> <img src="images/Home_Icon_2.png"
-                        alt="picture" class="icons"></a>
+                    <a class="nav-link " href="./coucherHomePage.php"> <img src="images/Home_Icon_2.png"
+                        alt="picture" class="icons"><span>Home</span></a>
                     <a class="nav-link active " href="./handleWish.html"><span>Handle Wish</span> <img
                             src="images/Image_9.png" alt="picture" class="icons"></a>
                     <a class="nav-link" href="#"><span>Create new user</span>
@@ -56,16 +53,18 @@
         <div id="middleWrapper">
             <!-- !breadCrumb -->
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
+                <ol>
+
                 </ol>
             </nav>
             <!-- !/breadCrumb -->
-            <div class="alert alert-primary" id="currPageTitle" role="alert">
-                <h4>Handle Wish</h4>
-            </div>
-
+           
+               
+            
+           
             <!-- !notes -->
             <div class="notes">
+            <h4>Notes:</h4>
                 <!-- <p> Allergic to Pineapple</p>
                 <p> Doesn't like Sushi</p> -->
             </div>
@@ -171,6 +170,8 @@
         crossorigin="anonymous"></script>
     <script src="includes/main.js"></script>
     <script src="includes/get_user_wish_details.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

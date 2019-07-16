@@ -26,7 +26,7 @@ $(document).ready(function(){
         currIssue = obj.issues.substring().split(',');
         $.each(currIssue,function(i,issue){
           $('.notes').append(
-            '<p>' + issue + '</p>'
+            ' <b> <p class="text-danger">' + issue + '</p> </b>'
           )
         })
 

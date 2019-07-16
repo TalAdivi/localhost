@@ -25,10 +25,7 @@
     <!-- !search -->
     <div id="search">
       <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn searchBtn" type="button" id="button-addon1"><img src="./images/Search_Icon_1.png" alt="search icon" class="searchIcon"></button>
-        </div>
-        <input type="text" class="form-control" placeholder="">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
       </div>
     </div>
     <!-- !/search -->
@@ -61,7 +58,7 @@
 
       <!-- !current page indicator -->
       <div class="alert alert-primary" id="currPageTitle" role="alert">
-        <h1>Home Page</h1>
+        <h1>Home Page </h1>
       </div>
       <!-- !/current page indicator -->
 

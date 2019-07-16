@@ -19,9 +19,20 @@ $(document).ready(function(){
   currURL = window.location.href;
   console.log(currURL); 
 
+  if(currURL.match(/specificWish/) != null)
+  {
+   $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".handleWish tbody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+}
+
   // to see witch page i am
   if(currURL.match(/coucherHomePage/) != null)
   {
+   
     var q = "SELECT * FROM `tbl_users_202`";
     
     $.when(
@@ -68,6 +79,20 @@ $(document).ready(function(){
         }
       })
     });
+
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#circle_table tbody tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $(".table-row div").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
   }
 
 
@@ -108,9 +133,6 @@ $(document).ready(function(){
         }
       });
     });
-
-
-    
   }
 
   if(currURL.match(/mobileHomePage/g) != null){
@@ -231,8 +253,7 @@ $(document).ready(function(){
     });
   }
 
-
-
+ 
 
 
 });

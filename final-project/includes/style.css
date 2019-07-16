@@ -1077,4 +1077,29 @@ li{display:block}
     }
 }
 
+#coucherFlow .nav-link img {
+    /* float: right; */
+    float: left !important;
+}
+
+#coucherFlow .nav-link span{
+    margin-left: 10% !important;
+}
+
+.alert-primary{
+    background-color: white !important; 
+    border-color: white !important;
+}
+
+#coucherFlow .notes{
+    margin-top: 10px;
+    background-color: transparent !important;
+    font-size: 110%;
+
+}
+
+#coucherFlow .DeletemoveDown{
+    margin-top: 0px !important;
+}
+
 /* /Media Querys */
