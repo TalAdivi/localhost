@@ -69,9 +69,7 @@
                     <h2> </h2>
                     <ul class="responsive-table" id="newUserTable">
 
-                        <li class="table-header">
-                            <div class="col">Wish Name</div>
-                        </li>
+                       
                     </ul>
                 </div>
                 
