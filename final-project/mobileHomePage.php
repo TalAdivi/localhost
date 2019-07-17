@@ -19,7 +19,7 @@
   <!-- */hey user name -->
 
   <!--*logo  -->
-  <a href="./coucherHomePage.php">
+  <a href="#">
     <div class="container" id="logo"></div>
   </a>
   <!--*/logo  -->
@@ -53,7 +53,7 @@
     <div class="alert alert-success next-meal-sum">
       <section class="next-meal"><strong>Next Meal:</strong><br>Thired Meal</section>
       <section class="meal-at"><strong>At:</strong> <br>17:30</section>
-        <a id='mealLink' href="">
+    <a id='mealLink' href="./diet.php">
       <img src="./images/Food_Apple_Icon_Med.png" alt="Apple Icon" class="home-icons">
     </a>
     </div>
