@@ -29,8 +29,6 @@
         </div>
         <!-- !/search -->
 
-        <!-- <div class="clear"></div> -->
-
         <!-- !nav bar -->
         <div id="navBar">
             <div class="row">
@@ -55,12 +53,6 @@
             </nav>
             <!-- !/breadCrumb -->
 
-            <!-- !current page indicator -->
-            <div class="alert alert-primary" id="currPageTitle" role="alert">
-                <h4>Zion Baruchi Diet</h4>
-            </div>
-            <tr>
-
                 <!--! choose meal -->
                 <div class="chooseMeal">
 
@@ -83,13 +75,11 @@
                                     <button class="btn btn-light"> Third Meal</button>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
 
                 </div>
                 <!--! /choose meal -->
-                <!-- !/current page indicator -->
 
                 <!--! meal main table -->
 
@@ -98,13 +88,11 @@
                     <div class="container">
                         <h2>Menu </h2>
                         <ul class="responsive-table productsTable">
-
                             <li class="table-header">
                                 <div class="col col-1">Products</div>
                                 <div class="col col-3">Amount (Grams)</div>
                             </li>
                             <div class="mainTableBody">
-                                
                             </div>
                             <button type="button" class="btn btn-success" id="saveBtn">Save</button>
                         </ul>
@@ -112,26 +100,19 @@
                 </div>
                 <!--! /meal main table -->
 
-
-
-
                 <!--! Meal Sum Table -->
                 <div class="mealSumTalbe">
-
-                <div class="container">
+                    <div class="container">
                         <h2>Meal Sum</h2>
                         <ul class="responsive-table productsTable">
-
                             <li class="table-header">
                                 <div class="col">Nutritional Values</div>
                                 <div class="col">Amount (Grams)</div>
                             </li>
                             <div class="mainTableBody">
-                                
                             </div>
                         </ul>
                     </div>
-
                 </div>
                 <!--! /Meal Sum Table -->
 
@@ -139,17 +120,14 @@
 
                 <!--! Daily Meal Sum Table -->
                 <div class="dailyMealSumTalbe">
-
-                <div class="container">
+                    <div class="container">
                         <h2>Daily Meal Sum</h2>
                         <ul class="responsive-table productsTable">
-
                             <li class="table-header">
                                 <div class="col">Nutritional Values</div>
                                 <div class="col">Amount (Grams)</div>
                             </li>
                             <div class="mainTableBody">
-                                
                             </div>
                         </ul>
                     </div>
@@ -158,38 +136,12 @@
 
                 <!--! /Daily Meal Sum Table -->
 
-                <!-- <div class="clear"></div> -->
-                <!-- <input type="submit" value="Submit" class="btn btn-primary done-btn" form="mainForm"><br> -->
-                
-                <!-- <div class="clear"></div> -->
-
         </div>
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="includes/main.js"></script>
         <script src="includes/get_user_meal_details.js"></script>
-
     </div>
 </body>
 
 </html>
-
-
-
-
-
-<!-- '<li class="table-row">' +
-           '<a class="text-dark" href=./specificWish.php?user_id='+
-            obj.user_id+
-            '>'+
-            '<div class="col" data-label="Name">' +
-            obj.name +
-            '</div>' +
-            '</a>'+
-            '<div class="col col-4" data-label="whishes">'+
-            obj.wishes +
-            '</div>'+
-          '</li>' -->

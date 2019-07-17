@@ -34,7 +34,6 @@ if (!empty($_POST['loginMail'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en" id="loginPage">
 
@@ -47,7 +46,6 @@ if (!empty($_POST['loginMail'])) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
-
 <section class="login-block">
     <div class="container">
         <div class="row">
@@ -56,7 +54,7 @@ if (!empty($_POST['loginMail'])) {
                 <form class="login-form" action="#" method="post" id="frm">
                     <div class="form-group">
                         <label for="loginMail" class="text-uppercase">Mail</label>
-                        <input type="email" class="form-control"  name="loginMail" id="loginMail" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" name="loginMail" id="loginMail" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1" class="text-uppercase">Password</label>
@@ -64,9 +62,7 @@ if (!empty($_POST['loginMail'])) {
                     </div>
                     <div class="form-check">
                         <button type="submit" class="btn btn-login float-right">Log Me In</button>
-                        <div class="error-message"><?php if (isset($message)) {
-                                        echo $message;
-                                    } ?></div>
+                        <div class="error-message"><?php if (isset($message)) {echo $message;} ?></div>
                     </div>
                 </form>
 
@@ -88,4 +84,5 @@ if (!empty($_POST['loginMail'])) {
         </div>
 </section>
 <script src="includes/main.js"></script>
+
 </html>

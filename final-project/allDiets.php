@@ -24,12 +24,10 @@
         <!-- !search -->
         <div id="search">
             <div class="input-group mb-3">
-            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
             </div>
         </div>
         <!-- !/search -->
-
-        <!-- <div class="clear"></div> -->
 
         <!-- !nav bar -->
         <div id="navBar">
@@ -50,139 +48,65 @@
         <div id="middleWrapper">
             <!-- !breadCrumb -->
             <nav aria-label="breadcrumb">
-
             </nav>
             <!-- !/breadCrumb -->
 
-            <!-- !current page indicator -->
+            <!--! meal main table -->
 
-            <tr>
-
-                <!--! meal main table -->
-
-                <div class="mealTable">
-
+            <div class="mealTable">
                 <div class="container">
-                        <h2>Menu </h2>
-                        <ul class="responsive-table productsTable">
-
-                            <li class="table-header">
-                                <div class="col col-1"><img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addRow'>Products</div>
-                                <div class="col col-3">Amount (Grams)</div>
-                            </li>
-                            <div class="mainTableBody">
-                                
-                            </div>
-                            <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
-                            <button type="button" class="btn btn-primary" id="deleteBtn">Delete</button>
-                        </ul>
-                    </div>
-
-
-                    <!-- <form class="form-horizontal" action="./getParams.php" method="get" autocomplete="on" id="mainForm">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-highlight">
-                                <thead>
-                                    <tr>
-                                        <th><img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addRow'>Products</th>
-                                        <th>Amount (Grams)</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="mainTableBody">
-
-                                </tbody>
-                            </table>
+                    <h2>Menu </h2>
+                    <ul class="responsive-table productsTable">
+                        <li class="table-header">
+                            <div class="col col-1"><img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addRow'>Products</div>
+                            <div class="col col-3">Amount (Grams)</div>
+                        </li>
+                        <div class="mainTableBody">
                         </div>
-                    </form> -->
+                        <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+                        <button type="button" class="btn btn-primary" id="deleteBtn">Delete</button>
+                    </ul>
                 </div>
-                <!--! /meal main table -->
+            </div>
+            <!--! /meal main table -->
 
-
-                <!--! choose meal -->
-                <div class="chooseMeal">
-
-
-                    <div class="container">
-                        <h2>Choose Meal </h2>
-                        <ul class="responsive-table productsTable">
-
-                            <li class="table-header">
-
-                                <div class="col">
-                                    <!-- <span>Add</span> -->
-                                    <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addMealName'>
-                                </div>
-                                <div class="col">
-                                    Add Meal
-                                </div>
-                            </li>
-
+            <!--! choose meal -->
+            <div class="chooseMeal">
+                <div class="container">
+                    <h2>Choose Meal </h2>
+                    <ul class="responsive-table productsTable">
+                        <li class="table-header">
                             <div class="col">
+                                <!-- <span>Add</span> -->
+                                <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addMealName'>
+                            </div>
+                            <div class="col">
+                                Add Meal
+                            </div>
+                        </li>
+                        <div class="col">
                             <select class="options custom-select" id="choose-meal-option"></select>
-                            </div>
-                        </ul>
-                    </div>
-
-
-
-                    <!-- <div class="table-responsive">
-                        <table class="table table-bordered table-highlight">
-                            
-                            <thead>
-                                <tr>
-                                    <th> <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addMealName'>Choose Meal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td> <select class="options" id="choose-meal-option"></select>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> -->
+                        </div>
+                    </ul>
                 </div>
-                <!--! /choose meal -->
+            </div>
+            <!--! /choose meal -->
 
-                <!--! Meal Sum Table -->
-                <div class="mealSumTalbe">
-                    <div class="container">
-                        <h2>Meal Sum</h2>
-                        <ul class="responsive-table productsTable">
-
-                            <li class="table-header">
-                                <div class="col">Nutritional Values</div>
-                                <div class="col">Amount (Grams)</div>
-                            </li>
-                            <div class="mainTableBody">
-
-                            </div>
-                        </ul>
-                    </div>
+            <!--! Meal Sum Table -->
+            <div class="mealSumTalbe">
+                <div class="container">
+                    <h2>Meal Sum</h2>
+                    <ul class="responsive-table productsTable">
+                        <li class="table-header">
+                            <div class="col">Nutritional Values</div>
+                            <div class="col">Amount (Grams)</div>
+                        </li>
+                        <div class="mainTableBody">
+                        </div>
+                    </ul>
                 </div>
-                <!--! /Meal Sum Table -->
-
-                <!-- <div class="clear"></div> -->
-
-                <!--! Daily Meal Sum Table -->
-
-
-                <!--! /Daily Meal Sum Table -->
-
-                <!-- <div class="clear"></div> -->
-                <!-- <input type="submit" value="Submit" class="btn btn-primary done-btn" form="mainForm"><br> -->
-
-
-                <!-- <button type="button" class="btn btn-primary" id="saveBtn">Save</button> -->
-            
-
-
-                <!-- <div class="clear"></div> -->
-
+            </div>
         </div>
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="includes/main.js"></script>

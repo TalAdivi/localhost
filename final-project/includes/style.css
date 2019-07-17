@@ -20,7 +20,6 @@ body {
 
 #coucherFlow .container {
     width: 80% !important;
-    
 }
 
 #coucherFlow h2 {
@@ -42,8 +41,6 @@ body {
     font-weight: bold;
 }
 
-
-
 #coucherFlow li {
     border-radius: 3px;
     padding: 25px 30px;
@@ -52,12 +49,11 @@ body {
     margin-bottom: 25px
 }
 
-#coucherFlow #saveBtn{  
-
+#coucherFlow #saveBtn {
     float: right;
 }
 
-#coucherFlow .productsTable li{
+#coucherFlow .productsTable li {
     padding: 25px 0px !important;
     margin-bottom: 10px !important;
 }
@@ -70,17 +66,16 @@ body {
     margin-bottom: 25px
 }
 
-#coucherFlow #chooseMealTable .btn-light{
+#coucherFlow #chooseMealTable .btn-light {
     width: 100%;
 }
 
-#coucherFlow #wishesTable .table-header  {
+#coucherFlow #wishesTable .table-header {
     background-color: #97ed82;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: .03em;
     font-weight: bold;
-
 }
 
 #coucherFlow #newUserTable .table-header {
@@ -89,12 +84,8 @@ body {
     text-transform: uppercase;
     letter-spacing: .03em;
     font-weight: bold;
-
 }
 
-/* #coucherFlow #whiseProgress{
-
-} */
 
 #coucherFlow .table-row {
     background-color: #fff;
@@ -103,7 +94,6 @@ body {
 
 #coucherFlow .col-1 {
     flex-basis: 10%;
-    
 }
 
 #coucherFlow .col-2 {
@@ -128,12 +118,9 @@ body {
     }
     #coucherFlow .col:before {
         color: #6C7A89;
-        /* padding-right: 10px; */
-        /* content: attr(data-label); */
         flex-basis: 50%;
         text-align: right
     }
-
     #coucherFlow #chooseMealTable .col:before {
         color: #6C7A89;
         padding-right: 10px;
@@ -153,9 +140,7 @@ body {
 
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block {
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #8cffb5, #62de8e);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     float: left;
     width: 100%;
     padding: 50px 0;
@@ -168,7 +153,6 @@ body {
 }
 
 .login-block .banner-sec {
-    /* background: url('../images/newLogo.png') no-repeat left bottom; */
     background-size: cover;
     min-height: 500px;
     border-radius: 0 10px 10px 0;
@@ -349,14 +333,6 @@ body {
     width: 923px;
 }
 
-/* #coucherFlow #newUserTable {
-    margin-top: 70px;
-    position: relative;
-    float: left;
-    width: 923px;
-    height: 355px;
-} */
-
 #coucherFlow .nav-link {
     width: 210px;
     margin-top: 10px;
@@ -497,12 +473,10 @@ body {
 }
 
 #coucherFlow .redDot {
-    /* width: 14px; */
     max-width: 0.33333% !important;
     height: 21px;
     background: red;
     border-radius: 100%;
-    /* margin-top: 5px; */
 }
 
 #coucherFlow .orangeDot {
@@ -511,14 +485,6 @@ body {
     background: orange;
     border-radius: 100%;
     margin-top: 5px;
-}
-
-#coucherFlow #wishesTable {
-    /* margin-top: 70px;
-    position: relative;
-    float: left;
-    width: 923px;
-    height: 355px; */
 }
 
 #coucherFlow #show-percent {
@@ -554,9 +520,6 @@ body {
     margin-left: 25px;
 }
 
-/* #coucherFlow .wishesTable td {
-    text-align: center;
-} */
 
 #coucherFlow .progress {
     margin-top: 100px;
@@ -626,12 +589,10 @@ body {
 
 #coucherFlow .mealSumTalbe {
     width: 300px;
-    /* height: 268px; */
     margin-top: 20px;
     float: left;
     position: relative;
     display: block;
-    /* clear: right; */
 }
 
 #coucherFlow #dailyMealSumBadge {
@@ -649,11 +610,11 @@ body {
     clear: both;
 }
 
-#coucherFlow .mealSumTalbe .container{
+#coucherFlow .mealSumTalbe .container {
     width: 100% !important;
 }
 
-#coucherFlow .dailyMealSumTalbe .container{
+#coucherFlow .dailyMealSumTalbe .container {
     width: 100% !important;
 }
 
@@ -792,7 +753,6 @@ body {
 #userFlow #logo {
     display: block;
     background-image: url(../images/largeLogo1.png);
-    /* background-color: black; */
     width: 320px;
     height: 254px;
     background-repeat: no-repeat;
@@ -850,7 +810,6 @@ body {
 }
 
 #userFlow .left {
-    /* margin-top: 60px;  */
     float: left;
     width: 100px;
     clear: both;
@@ -949,25 +908,6 @@ body {
     text-decoration: none;
 }
 
-/* #userFlow .day-details a:hover{
-    text-decoration: none;
-    color: none;
-}
-
-#userFlow .day-details a:visited{
-    text-decoration: none;
-    color: none;
-}
-#userFlow .day-details a:active{
-    text-decoration: none;
-    color: none;
-}
-
-#userFlow .day-details a{
-    text-decoration: none;
-    color: none !important;
-} */
-
 #userFlow .alert-success {
     overflow: hidden;
 }
@@ -1042,8 +982,6 @@ body {
         width: 100%;
     }
     #coucherFlow .nav-link {
-        /* width: 100%; */
-        /* float: left; */
         margin-left: 2px;
         padding: 0rem 0rem 0rem 0.05rem!important;
     }
@@ -1084,9 +1022,7 @@ body {
         width: 100% !important;
         margin-left: 0px !important;
     }
-    /* #coucherFlow #wishesTable {
-        width: 100% !important;
-    } */
+
     #coucherFlow .nav-link span {
         display: block;
         height: 71px;
@@ -1109,9 +1045,7 @@ body {
     #coucherFlow .myTable {
         width: 100%;
     }
-    /* .badge-secondary{
-        margin: 0px 40% !important;
-    } */
+
     #coucherFlow .themeBadge {
         margin: 10px;
         width: 100% !important;
@@ -1198,42 +1132,38 @@ body {
 }
 
 #coucherFlow .nav-link img {
-    /* float: right; */
     float: left !important;
 }
 
-#coucherFlow .nav-link span{
+#coucherFlow .nav-link span {
     margin-left: 10% !important;
 }
 
-.alert-primary{
-    background-color: white !important; 
+.alert-primary {
+    background-color: white !important;
     border-color: white !important;
 }
 
-#coucherFlow .notes{
+#coucherFlow .notes {
     margin-top: 10px;
     background-color: transparent !important;
     font-size: 110%;
-
 }
 
-#coucherFlow .DeletemoveDown{
+#coucherFlow .DeletemoveDown {
     margin-top: 0px !important;
 }
 
-
-.form-control{
+.form-control {
     padding: none !important;
 }
 
-#coucherFlow .breadcrumb{
+#coucherFlow .breadcrumb {
     background-color: transparent !important;
 }
 
-#coucherFlow .breadcrumb li{
+#coucherFlow .breadcrumb li {
     padding: 1px 1px !important;
 }
-
 
 /* /Media Querys */
