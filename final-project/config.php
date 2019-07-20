@@ -1,3 +1,3 @@
 <?php
 
-define('URL','http://localhost/final-project/');
+define('URL','http://localhost/FinalProject/localhost/final-project/');

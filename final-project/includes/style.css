@@ -1166,4 +1166,8 @@ body {
     padding: 1px 1px !important;
 }
 
+
+.hidden{
+    display: none !important;
+}
 /* /Media Querys */
