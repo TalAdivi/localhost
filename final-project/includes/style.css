@@ -589,12 +589,20 @@ body {
 
 #coucherFlow .mealSumTalbe {
     width: 300px;
-    margin-top: 20px;
+    margin-top: 110px;
+    margin-left: 32px;
     float: left;
     position: relative;
     display: block;
 }
-
+#coucherFlow .DeleteTable{
+    width: 300px;
+    margin-top: 40px;
+    margin-left: 32px;
+    float: left;
+    position: relative;
+    display: block;
+}
 #coucherFlow #dailyMealSumBadge {
     display: block;
     position: relative;
@@ -1170,4 +1178,6 @@ body {
 .hidden{
     display: none !important;
 }
+
+
 /* /Media Querys */

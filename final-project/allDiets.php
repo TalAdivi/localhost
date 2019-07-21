@@ -24,7 +24,7 @@
         <!-- !search -->
         <div id="search">
             <div class="input-group mb-3">
-            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
             </div>
         </div>
         <!-- !/search -->
@@ -63,7 +63,7 @@
 
                 <div class="mealTable">
 
-                <div class="container">
+                    <div class="container">
                         <h2>Menu </h2>
                         <ul class="responsive-table productsTable">
 
@@ -72,7 +72,7 @@
                                 <div class="col col-3">Amount (Grams)</div>
                             </li>
                             <div class="mainTableBody">
-                                
+
                             </div>
                             <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
                             <button type="button" class="btn btn-primary" id="deleteBtn">Delete</button>
@@ -104,49 +104,30 @@
 
 
                     <div class="container">
-                        <h2>Choose Meal </h2>
+                        <h2 id="mealOption">Choose Meal </h2>
                         <ul class="responsive-table productsTable">
 
                             <li class="table-header">
 
                                 <div class="col">
                                     <!-- <span>Add</span> -->
-                                    <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addMealName'>
+                                    <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon AddMeal" id='addMealName'>
+                                    <img src="./images/minus.png" alt="picture" class="addIcon removeMeal" id='removeMealName'>
                                 </div>
                                 <div class="col">
                                     Add Meal
                                 </div>
                             </li>
 
-                            <div class="col">
-                            <select class="options custom-select down" id="choose-meal-category">
-                                <option value="clear">Choose a Category</option>
-                            </select>
-                            <select class="options custom-select hidden" id="choose-meal-option">
-                            </select>
+                            <div class="col" id="categoryChoices">
+                                <select class="options custom-select down" id="choose-meal-category">
+                                    <option value="clear">Choose a Category</option>
+                                </select>
+                                <select class="options custom-select hidden" id="choose-meal-option">
+                                </select>
                             </div>
                         </ul>
                     </div>
-
-
-
-                
-                    <!-- <div class="table-responsive">
-                        <table class="table table-bordered table-highlight">
-                            
-                            <thead>
-                                <tr>
-                                    <th> <img src="./images/Add_Icon_1.png" alt="picture" class="addIcon" id='addMealName'>Choose Meal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td> <select class="options" id="choose-meal-option"></select>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> -->
                 </div>
                 <!--! /choose meal -->
 
@@ -160,7 +141,7 @@
                                 <div class="col">Nutritional Values</div>
                                 <div class="col">Amount (Grams)</div>
                             </li>
-                            <div class="mainTableBody">
+                            <div class="mainTableBody" id="mainbodyoftable">
                             </div>
                         </ul>
                     </div>
@@ -179,7 +160,7 @@
 
 
                 <!-- <button type="button" class="btn btn-primary" id="saveBtn">Save</button> -->
-            
+
 
 
                 <!-- <div class="clear"></div> -->

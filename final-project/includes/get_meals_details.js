@@ -6,6 +6,10 @@ var NameOfCategory;
 var updatedText = '';
 var tableName = '';
 
+
+
+
+
 var createMealSumTable = function (currDiet) {
   $('.mealSumTalbe .mainTableBody').replaceWith(
 
@@ -55,37 +59,6 @@ var createMealSumTable = function (currDiet) {
     '</li>' +
     '</div>'
 
-
-
-
-
-    //   '<tbody>'+
-    //   '<tr>' +
-    //   '<td><input type="text" class="form-control" value='+
-    //   "Carbohydrat"+
-    //   ' readonly="readonly">'+
-    //   '</td>'+
-    //   '<td><input type="text" class="form-control" value='+
-    //   currDiet.carbohydrat+
-    //   ' readonly="readonly">'+'</td>'+
-    // '</tr>'+
-    // '<tr>' +
-    //   '<td><input type="text" class="form-control" value='+
-    //   "Proteins"+
-    //   ' readonly="readonly">'+'</td>'+
-    //   '<td><input type="text" class="form-control" value='+
-    //   currDiet.protein+
-    //   ' readonly="readonly">'+'</td>'+
-    // '</tr>'+
-    // '<tr>' +
-    //   '<td><input type="text" class="form-control" value='+
-    //   "Calories"+
-    //   ' readonly="readonly">'+'</td>'+
-    //   '<td><input type="text" class="form-control" value='+
-    //   currDiet.calories+
-    //   ' readonly="readonly">'+'</td>'+
-    // '</tr>' +
-    // '</tbody>'
   )
 }
 
@@ -182,6 +155,31 @@ var createOptions = function (Json, selected) {
   return allOptions;
 }
 
+var optionChange = function (cat) {
+  var name = $("#choose-meal-option option:selected").val();
+
+  if (name == "clear") {
+    $('.mealTable .mainTableBody').html('');
+    return;
+  }
+
+  var id;
+
+  console.log(cat, name);
+  $.each(diets, function (i, currDiet) {
+    var split = currDiet.name.split('-');
+    if (split[0] == cat && split[1] == name) {
+      id = i;
+      return;
+    }
+  });
+
+  console.log(id);
+  console.log(diets[id]);
+  makeTable(diets, diets[id].name);
+};
+
+
 var makeTable = function (json, tableName) {
   tableText = '<div class="mainTableBody">';
   $.each(json, function (i, obi) {
@@ -200,7 +198,7 @@ var makeTable = function (json, tableName) {
       });
       tableText += '</div>';
       $('.mealTable .mainTableBody').replaceWith(tableText);
-      
+
 
       createMealSumTable(obi);
     }
@@ -212,29 +210,14 @@ computeProdAmountText = function (prodName, prodAmount, obi) {
 
   var options = createOptions(prodsInfo, prodName); // all the names of the products
   var text = '';
-  var NameOfProduct = options;
 
-  // text = '<tr>' + 
-  // '<td>' + '<select class="options custom-select"' +
-  // 'id=' +
-  // idAutoIncrease++ +
-  // '>' +   options +  '</select>' +
-  // '<td>' + 
-  // '<input type="text" class="form-control "' +
-  //   'id=' +
-  //   idAutoIncrease++ +
-  //  ' value=' +
-  //   prodAmount + 
-  //   '>' +
-  // '</td>' +
-  // '</tr>';
-
+  console.log(obi);
 
   text += '<li class="table-row">' +
     '<div class="col" data-label="Name">' +
     '<select class="options custom-select"' +
     'id=' +
-     idAutoIncrease++ +
+    idAutoIncrease++ +
     '>' + options + '</select>' +
     '</div>' +
     '<div class="col col-4" data-label="whishes">' +
@@ -277,6 +260,15 @@ $(document).ready(function () {
       $(this).val(value);
       console.log($(this).val());
     });
+
+    $.each(diets, function (i, obi) {
+      obi["mealIDs"] = [];
+      obi["protein"] = 0;
+      obi["calories"] = 0;
+      obi["carbohydrat"] = 0;
+      // console.log(obi);
+    });
+
   })
 });
 
@@ -290,13 +282,7 @@ $("select").change(function () {
     if ($(this).attr('class') == 'generalOption') {
       console.log($(this).val());
 
-      $.each(diets, function (i, obi) {
-        obi["mealIDs"] = [];
-        obi["protein"] = 0;
-        obi["calories"] = 0;
-        obi["carbohydrat"] = 0;
-        // console.log(obi);
-      });
+
       makeTable(diets, $(this).text());
       // calNutritionsVal($(this).text(),diets,prodsInfo);
       console.log(diets);
@@ -312,29 +298,132 @@ $("input").keyup(function () {
   console.log('111');
 });
 
+$('#removeMealName').on('click', function () {
+
+  if ($('#removeMealName').hasClass('removeMeal')) {
+    $('#categoryChoices').html('');
+    $('#mealOption').html('Remove Category');
+    $('.mealTable').css('display', 'none');
+    $('#categoryChoices').append(
+      '<select class="options custom-select down" id="choose-meal-category">\
+      <option value="clear">Choose a Category</option>\
+      </select>\
+      <select class="options custom-select hidden" id="choose-meal-option">\
+      </select>\
+      <button id="queryRemoveCategory">Remove Category</button>\
+      '
+
+
+    );
+
+    $('#queryRemoveCategory').attr('onclick', 'deleteCat()');
+
+
+    initMeals();
+    $('#choose-meal-category').change(function () {
+      categoryChange();
+    });
+
+    $('#choose-meal-option').css('display', 'none');
+    clearProdsTable = '<div class="mainTableBody"></div>';
+    $('.mainTableBody').replaceWith(clearProdsTable);
+
+    clearMealSumTable = '<div></div>';
+    $('.mealSumTalbe div').replaceWith(clearMealSumTable);
+
+    $('#removeMealName').removeClass('removeMeal');
+  } else {
+    $('#mealOption').html('Choose Category');
+    $('.mealTable').css('display', 'block');
+    $('#removeMealName').addClass('removeMeal');
+    $('#categoryChoices').html('');
+
+
+    $('#categoryChoices').html('<select class="options custom-select down" id="choose-meal-category">\
+                <option value="clear">Choose a Category</option>\
+                </select>\
+                <select class="options custom-select hidden" id="choose-meal-option">\
+                </select>\
+              ');
+
+    initMeals();
+    $('#choose-meal-category').change(function () {
+      categoryChange();
+    });
+    $('#choose-meal-option').change(function () {
+      var cat = $("#choose-meal-category option:selected").val();
+      $.each(diets, function (i, obi) {
+        obi["mealIDs"] = [];
+        obi["protein"] = 0;
+        obi["calories"] = 0;
+        obi["carbohydrat"] = 0;
+        // console.log(obi);
+      });
+      optionChange(cat);
+    });
+
+    $('.mealTable .mainTableBody').replaceWith('');
+
+
+  }
+});
+
 $('#addMealName').on("click", function () {
 
-  $('.chooseMeal ul').append(
-    // '<tr>' +
-    //   '<td>' + 
-    //   '<input type="text" class="form-control" value="" placeholder="enter diet name" id="newMealInput"></input>' +
-    //   '</td>' +
-    //   '</tr>'
-    // '<li class="table-row">'+
-    '<div class="col">' +
-    '<input type="text" class="form-control newInput" value="" placeholder="enter category name" id="newMealInput"></input>' +
-    '</div>'+
-    '<div class="col">' +
-    '<input type="text" class="form-control newInput" value="" placeholder="enter meal name" id="newMealInputTwo"></input>' +
-    '</div>'
-    // '</li>'
-  );
+  if ($('#addMealName').hasClass('AddMeal')) {
+    $('#mealOption').html('Add Category');
+    $('#categoryChoices').html('');
+    $('#categoryChoices').append(
+      '<div class="col">' +
+      '<input type="text" class="form-control newInput" value="" placeholder="enter category name" id="newMealInput"></input>' +
+      '</div>' +
+      '<div class="col">' +
+      '<input type="text" class="form-control newInput" value="" placeholder="enter meal name" id="newMealInputTwo"></input>' +
+      '</div>'
+    );
 
-  clearProdsTable = '<div class="mainTableBody"></div>';
-  $('.mainTableBody').replaceWith(clearProdsTable);
+    clearProdsTable = '<div class="mainTableBody"></div>';
+    $('.mainTableBody').replaceWith(clearProdsTable);
 
-  clearMealSumTable = '<div></div>';
-  $('.mealSumTalbe div').replaceWith(clearMealSumTable);
+    clearMealSumTable = '<div></div>';
+    $('.mealSumTalbe div').replaceWith(clearMealSumTable);
+
+    $('#addMealName').removeClass('AddMeal');
+
+  } else {
+
+    $('#mealOption').html('Choose Category');
+
+    $('#addMealName').addClass('AddMeal');
+    $('#categoryChoices').html('');
+
+    $('#categoryChoices').html('<select class="options custom-select down" id="choose-meal-category">\
+                <option value="clear">Choose a Category</option>\
+                </select>\
+                <select class="options custom-select hidden" id="choose-meal-option">\
+                </select>\
+              ');
+
+    initMeals();
+    $('#choose-meal-category').change(function () {
+      categoryChange();
+    });
+    $('#choose-meal-option').change(function () {
+      var cat = $("#choose-meal-category option:selected").val();
+      $.each(diets, function (i, obi) {
+        obi["mealIDs"] = [];
+        obi["protein"] = 0;
+        obi["calories"] = 0;
+        obi["carbohydrat"] = 0;
+        // console.log(obi);
+      });
+      optionChange(cat);
+    });
+
+    $('.mealTable .mainTableBody').replaceWith('');
+
+  }
+
 });
 
 
@@ -344,18 +433,21 @@ $('#addRow').on("click", function () {
   $('.mealTable .mainTableBody').append(rowText);
 })
 
-$('#deleteBtn').click ( function () {
+$('#deleteBtn').on("click", function () {
   var q = '';
   $("select option:selected").each(function () {
 
     // to prevent product selected to triger 
     if ($(this).attr('class') == 'generalOption') {
-      var tablecategory =  $(this).val();
-      tableName = $(this).text();
-      console.log(tableName);
+      console.log($(this).val());
 
-      q = "DELETE FROM `tbl_diet_202` WHERE name="+tablecategory+'-'+tableName+";";
-      
+      tableName = $(this).text();
+
+      q = "DELETE FROM `tbl_diet_202` WHERE name=" +
+        "'" +
+        tableName +
+        "'";
+
       $.when($.post('query.php', { query: q }, function (res) {
         // var updatedJson;
         if (res == "NULL")
@@ -366,20 +458,18 @@ $('#deleteBtn').click ( function () {
         location.reload();
       })
     }
-
   });
-
 });
 
 
 
 
-$('#saveBtn').on('click',function(){
+$('#saveBtn').on('click', function () {
 
-  var inputOfCategory = $('#newMealInput').val(); 
+  var inputOfCategory = $('#newMealInput').val();
   var inputOfMeal = $('#newMealInputTwo').val();
   var NameOfMeal = inputOfCategory + '-' + inputOfMeal;
-    if (NameOfMeal == null) {
+  if (NameOfMeal == null) {
     $("select option:selected").each(function () {
       // to prevent product selected to triger 
       if ($(this).attr('class') == 'generalOption') {
@@ -423,7 +513,7 @@ $('#saveBtn').on('click',function(){
       tableName +
       "'";
 
-  } 
+  }
   else {
 
     q = "INSERT INTO `tbl_diet_202` (`name`,`prodes`) VALUES ('" +
@@ -434,117 +524,20 @@ $('#saveBtn').on('click',function(){
       "'" +
       ")";
 
-}
+  }
 
-$.when($.post('query.php', { query: q }, function (res) {
-      // var updatedJson;
-      if (res == "NULL")
-        console.log('error occured');
-  
-    })).done(function () {
-      alert("succeeded to create new diet!");
-      location.reload();
-    })
+  $.when($.post('query.php', { query: q }, function (res) {
+    // var updatedJson;
+    if (res == "NULL")
+      console.log('error occured');
+
+  })).done(function () {
+    alert("succeeded to create new diet!");
+    location.reload();
+  })
 
 });
 
-
-
-
-
-
-
-// $('#saveBtn').on('click', function () {
-
-//   if ($('.newInput').val() == null) {
-//     $("select option:selected").each(function () {
-//       // to prevent product selected to triger 
-//       if ($(this).attr('class') == 'generalOption') {
-
-//         tableName = $(this).text();
-//         // console.log(tableName);
-//         $.each(diets, function (i, obi) {
-//           if (obi.name == tableName) {
-//             updatedText = obi.prodes;
-//             console.log(updatedText);
-//           }
-//         });
-//         updatedText += ',';
-//       }
-//     });
-//   } else {
-//     tableName = $('#newMealInput').val();
-//   }
-
-//   $.each(newDietIDs, function (i, obi) {
-//     console.log(obi);
-//     currID = '#' + obi;
-//     if (parseInt(obi) % 2) {
-//       // console.log(obi);
-//       updatedText += $(currID).val() + ',';
-//       // console.log( $(currID).val());
-//     } else {
-//       updatedText += $(currID).val() + ':';
-//       // console.log( $(currID).val());
-//     }
-//   })
-//   updatedText = updatedText.slice(0, -1);
-//   console.log(updatedText);
-
-//   var q = '';
-
-//   if ($('#newMealInput').val() == null) {
-//     q = "UPDATE `tbl_diet_202` SET prodes= '" +
-//       updatedText +
-//       "' WHERE name= '" +
-//       tableName +
-//       "'";
-
-//   } else {
-
-//     q = "INSERT INTO `tbl_diet_202` (`name`,`prodes`) VALUES ('" +
-//       tableName +
-//       "'," +
-//       "'" +
-//       updatedText +
-//       "'" +
-//       ")";
-//   }
-
-//   $.when($.post('query.php', { query: q }, function (res) {
-//     // var updatedJson;
-//     if (res == "NULL")
-//       console.log('error occured');
-
-//   })).done(function () {
-//     alert("succeeded to create new diet!");
-//     location.reload();
-//   })
-// });
-
-
-
-
-// $('#middleWrapper').append(
-//   '<div class="all-tables">' +
-//     '<div class="table-responsive">' +
-//       '<table class="table table-bordered table-striped table-highlight" id="table_'+
-//       i +
-//       '">'+
-//         '<thead>'+
-//           '<tr>'+
-//             '<th>' +
-//             '<img src="./images/Add_Icon_1.png" alt="picture" class="addIcon">Products'+
-//             '</th>' +
-//             '<th>Amount (Grams)</th>'+
-//           '</tr>'+
-//         '</thead>'+
-//         '<tbody class="mainTableBody">'+             
-//         '</tbody>'+
-//       '</table>'+
-//     '</div>'+
-//   '</div>'
-// )
 var mealArray = [];
 
 var initMeals = function () {
@@ -569,7 +562,7 @@ var insertCategories = function () {
   var counter = 0;
   console.log(select);
   for (var meal of mealArray) {
-    option = $('<option value="' + meal + '" class="generalOption"></option>');
+    option = $('<option id = "' + meal + '" value="' + meal + '" class="generalOption"></option>');
     option.html(meal);
     select.append(option);
   }
@@ -577,19 +570,21 @@ var insertCategories = function () {
 
 
 $('#choose-meal-category').change(function () {
-  
+  categoryChange();
+});
+
+var categoryChange = function () {
   var value = $("#choose-meal-category option:selected").val();
-  NameOfCategory = value;
+  var select = $('#choose-meal-option');
+
   if (value == "clear") {
     var select = $('#choose-meal-option');
     select.html('');
-    select.css('display','none');
-    //add a hide for the table and clear its data with a function
+    select.addClass('hidden');
+    $('.mealTable .mainTableBody').html('');
   }
   else {
-    var select = $('#choose-meal-option');
     select.removeClass('hidden');
-    var count = 0;
     var flag = 0;
     select.html('');
     for (var meal of diets) {
@@ -597,41 +592,73 @@ $('#choose-meal-category').change(function () {
       NameOfMeal = info[1];
       console.log(NameOfMeal);
       if (info[0] == value) {
-        if(flag == 0)
-        {
+        if (flag == 0) {
           var option = '<option value="clear" class="generalOption">choose a Meal</option>';
           select.html('');
           select.append(option);
           ++flag;
         }
-        var option = $('<option value="' + count++ + '" class="generalOption"></option>');
+        var option = $('<option value="' + info[1] + '" class="generalOption"></option>');
         option.html(info[1]);
         select.append(option);
       }
     }
   }
-});
+};
+
+
 
 $('#choose-meal-option').change(function () {
-  var meal=NameOfCategory+'-'+NameOfMeal;
-  for(var diet of diets)
-  {
-    if(diet.name == meal)
-    {
-      makeTable(diets,meal);
-    }
-  }
+  var cat = $("#choose-meal-category option:selected").val();
+
+  $.each(diets, function (i, obi) {
+    obi["mealIDs"] = [];
+    obi["protein"] = 0;
+    obi["calories"] = 0;
+    obi["carbohydrat"] = 0;
+    // console.log(obi);
+  });
+
+  optionChange(cat);
 });
 
 
+var deleteCat = function () {
+  var cat = $("#choose-meal-category option:selected").val();
+  if(cat == 'clear')
+    return;
+  var q = 'DELETE FROM tbl_diet_202 WHERE name LIKE "%' + cat + '%";';
+  $.post('query.php', { query: q }, function (res) {
+    if (res == "NULL")
+      console.log('error occured');
+    else
+      location.reload();
+  });
+};
 
 
 
- // var id = $("#choose-meal-option option:selected").val();
+
+  // $(document).ready(function(){
+
+  //   var select = $('#DeleteCategorty');
+  //   for (var meal of diets) {
+  //     var info = meal.name.split('-');
+  //     NameOfMeal = info[1];
+  //     console.log(NameOfMeal);
+  //     select.append(NameOfMeal);
+  //   }
+  // });
+
+
+
+
+
+  // var id = $("#choose-meal-option option:selected").val();
   // console.log(id);
   // meal = diets[id];
-// var optionss = createGeneralOptions(diets);
-// // console.log(optionss);
-// $('#choose-meal-option').append(optionss);
-// $('#choose-meal-option-one').append(optionss);
-// });
+  // var optionss = createGeneralOptions(diets);
+  // // console.log(optionss);
+  // $('#choose-meal-option').append(optionss);
+  // $('#choose-meal-option-one').append(optionss);
+
