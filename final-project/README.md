@@ -15,5 +15,5 @@ Developed by [Tal Adivi](https://github.com/TalAdivi), [Eilon Cohen](https://git
 
 #### Note 
 
-- the project is not fully complete, the main idea was to manage not only the nutrition side but also integrate with user calander and sport behaviours.
+- the project is not fully complete, the main idea was to manage not only the nutrition side but also integrate with user calander and sport routines.
   within the course scope we only implament the nutration servies
