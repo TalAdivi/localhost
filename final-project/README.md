@@ -10,7 +10,7 @@ Developed by [Tal Adivi](https://github.com/TalAdivi), [Eilon Cohen](https://git
 - [x] fill tables with users and admin data including users meals
 - [x] build a JSON file to static data like nutrition values of each meal product 
 - [x] build a parsing functions to recieve all queries data
-- [x] build functions to bind daynamic data into the static HTML body
+- [x] build functions to bind daynamic data into static HTML body
 
 
 #### Note 
