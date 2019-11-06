@@ -1,0 +1,14 @@
+inner:
+
+/* eslint no-console: "error" */
+/* eslint camelcase: 0 */
+
+
+global:
+
+//rules
+"no-console": 2,
+"camelcase":"off"
+
+//env
+"jquery": true
